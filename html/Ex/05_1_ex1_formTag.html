@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form> 태그 : 정보를 제출하기 위하여 범위를 지정하는 역할을 합니다. -->
+    <!-- label태그와 input태그는 세트로 작성해야함. -->
+    <!-- 같은파일 내에서 id정의는 중복되면 안된다. 예) id="id"라고 정의했으면 다른데에 저 정의 못 씀. -->
+
+    <!-- 모든 조건들을 충족하면 action에 지정되어 있는 경로로 이동함.  -->
+
+    <form action="">
+        <!-- action = 이동할 경로 -->
+    <fieldset>
+       <legend>기본사항</legend>
+    
+        <label for="id">ID : </label>
+        <input type="text" id="id" maxlength="5" placeholder="아이디를 입력하세요">
+        <!-- maxlength : 글자수 제한 속성 -->
+        <!-- type은 ctrl+space 누르면 목록 뜸. 이름 막 지으면 안되고 목록에 있는걸로 써야함 -->
+        
+        <br>
+        <label for="pw">PW : </label>
+        <input type="password" id="pw" required>
+        <!-- input type에 따라서 작성할 수 있는 타입이 달라짐. 예) input type="password"하면 안보이게 작성됨. -->
+        <!-- required : 필수적으로 입력해야 하는 값이라는것을 의미함. -->
+
+        <br>
+        <label for="txta">기타 : </label>
+        <textarea name="txt" id="txta" cols="30" rows="10"></textarea>
+
+        <br>
+        <label for="poketmon">poketmon : </label>
+        <select name="poketmon" id="poketmon">
+            <option value="0">피카츄</option>
+            <option value="1">라이츄</option>
+            <option value="2">파이리</option>
+        </select>
+    </fieldset>
+        
+        <br>
+        <label for="email">email : </label>
+        <input type="email" id="email" readonly value="셋팅값">
+        <!-- readonly : 오직 읽기만 가능한 영역으로 설정됨. -->
+        <!-- value로 셋팅값을 미리 설정할 수 있음. readonly와 같이 쓰면, 미리 설정된 셋팅값에서 수정할 수 없게 됨. -->
+        
+        <br>
+        <label for="number">number : </label>
+        <input type="number" id="number" min="0" max="5">
+
+        <br>
+        <label for="range">range : </label>
+        <input type="range" id="range" min="0" max="10">
+
+        <br>
+        <label for="date">date</label>
+        <input type="date" id="date">
+
+        <br>
+        <label for="banana">바나나</label>
+        <input type="checkbox" id="banana" name="chk_fruit">
+        <br>
+        <label for="sb">딸기</label>
+        <input type="checkbox" id="sb" name="chk_fruit">
+        <br>
+        <label for="wm">수박</label>
+        <input type="checkbox" id="wm" name="chk_fruit">
+        <!-- name은 input을 묶어줌? -->
+
+        <br>
+        <br>
+        <label for="zz">짜장면</label>
+        <input type="radio" id="zz" name="foods">
+        <br>
+        <label for="ta">탕수육</label>
+        <input type="radio" id="ta" name="foods">
+        <!-- name을 통해서 한 그룹으로 묶어줘야지만 중복선택이 되지않음. -->
+        
+        <br>
+        <!-- <input type="submit"> 
+             <input type="reset"> 으로도 쓸 수 있지만 css를 고려해서, button을 많이 쓴다. -->
+        <button type="submit">전송</button>
+        <button type="reset">초기화</button>
+        <button type="button">버튼</button>
+        <!-- 현업에서는 input 보다는 button으로 버튼효과 준다. -->
+        
+
+        <br>
+        <input type="hidden" value="히든" name="hidden">
+        <!-- hidden : 사용자에게는 안보이지만 개발자에게는 보임. 그리고 무조건 value로 값을 설정해놔야함. -->
+    </form>
+</body>
+</html>
