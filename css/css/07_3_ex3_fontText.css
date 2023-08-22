@@ -1,0 +1,26 @@
+.tran { 
+    /* tran = transform */
+    /* 첫글자만 대문자로 만들어줌 */
+    text-transform: capitalize;
+    /* 전부다 대문자로 바꿔줌 */
+    text-transform: uppercase;
+    /* 전부다 소문자로 바꿔줌 */
+    text-transform: lowercase;
+}
+
+.spacing {
+    /* 원하는 만큼 자간(글자사이 간격) 설정 */
+    letter-spacing: 10px;
+    letter-spacing: 3em;
+}
+
+.w_spacing {
+    /* 원하는 만큼 단어사이 간격 설정 */
+    word-spacing: 1.5em;
+}
+
+.shadow { 
+    /* 글자에 그림자 넣어줌 */
+    text-shadow: -5px -5px 5px aqua;
+    /* 그림자의 좌우위치, 그림자의 상하위치, 그림자의 번짐정도, 색상*/
+}

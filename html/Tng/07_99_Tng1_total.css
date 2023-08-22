@@ -1,0 +1,25 @@
+body {
+    font-size: 14px;
+    /* body(전체)영역의 폰트크기를 14px로 고정해 놓고 필요한 부분만 font-size로 크기 따로 잡아 주면 더 깔끔  */
+}
+div {
+    width: 500px;
+    /* width로 범위 정해주지않으면 100%비율이 디폴트이기 때문에 브라우저 크기에 따라서 크기가 바뀜.  */
+    border: 1px solid #ad3000;
+}
+
+ul{
+    list-style-type: none;
+}
+
+strong {
+    color: #ad3000;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+li {
+    line-height: 2em;
+    /* em 과 %의 차이 : %는 최상위객체 기준, em은 부모글자 크기 기준
+    권장하는건 rem. */
+}

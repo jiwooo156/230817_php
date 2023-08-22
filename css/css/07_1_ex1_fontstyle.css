@@ -1,0 +1,56 @@
+/* import 방식 : style sheets에 적용함. */
+/* link 방식 : html 문서 - head 부분 - link rel=""어쩌구.. */
+  @import url('https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap');
+
+
+/* 폰트를 설정 : 궁서123 폰트가 없으면 굴림을 사용해라.라는 뜻 */
+* {
+    font-family: '궁서123', '굴림';
+}
+
+
+* { 
+    font-family: 'Gasoek One', sans-serif;;
+}
+
+.p1_size1 {
+    font-size: xx-small;
+}
+
+.p1_size2 {
+    font-size: medium;
+}
+
+.p1_size3 {
+    font-size: xx-large;
+}
+
+.p1_size4 {
+    font-size: 20px;
+}
+
+.p1_size5 {
+    font-size: 1.5em;
+    /* em : 부모요소의 글자크기에 따라서 달라짐 */
+}
+
+.p1_size6 {
+    font-size: 1.5rem; 
+    /* rem : 최상위 요소의 글자크기에 따라서 달라짐 */
+}
+
+
+
+
+
+.p1_weight1 {
+    font-weight: 100;
+}
+
+.p1_weight2 {
+    font-weight: 400;
+}
+
+.p1_weight3 {
+    font-weight: 900;
+}

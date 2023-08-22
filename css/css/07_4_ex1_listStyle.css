@@ -1,0 +1,24 @@
+.cook1 { 
+    /* type을 정해줌으로 인해서 목록에 순서 만들 수 있음. 그래서 ol태그 잘 안 씀 */
+    /* 목록 앞의 점(bullet) 없어짐 */
+    list-style-type: none;
+    /* 목록에 순서 매기기 */
+    list-style-type: decimal;
+    /* 목록 순서 대문자로 매기기 */
+    list-style-type: upper-alpha;
+
+    /* 설정값에 대해서 아래 사이트 참조하기 */
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type */
+}
+
+.cook2 {
+    /* 기본 디폴트값 */
+    list-style-position: outside;
+    /* 들여쓰기 해줌 */
+    list-style-position: inside;
+}
+
+.cook3 { 
+    /* 이미지 넣는 법 */
+    list-style-image: url(../img/icon.png);
+}

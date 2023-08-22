@@ -1,0 +1,34 @@
+.deco {
+    /* 같은요소에 적용되면 제일 최근효과가 덮어씌워짐. */
+    text-decoration: none;
+    text-decoration: underline;
+    text-decoration: line-through;
+}
+
+
+.height { 
+    /* 줄 간격 조정하기 (문장의 위아래로 적용되는듯) */
+    line-height: 2em;
+}
+
+
+.left {
+    /* 왼쪽 정렬 */
+    text-align: left;
+}
+
+
+.right {
+    /* 오른쪽 정렬 */
+    text-align: right;
+}
+
+
+.center { 
+    /* 가로만 중앙으로 정렬 
+    세로도 중앙 정렬 하려면 line-height도 맞춰줘야함.*/
+    background-color: cadetblue;
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+}

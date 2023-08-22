@@ -1,0 +1,17 @@
+table {
+    border: 1px solid #000;
+    /* 표 외곽선의 굵기, 선의 type, 선의 색 */
+    /* border-collapse: collapse; */
+    /* 셀 사이의 여백을 없애줌(표와 셀 테두리를 합쳐줌) */
+    caption-side: bottom;
+    border-spacing: 20px 15px; 
+    /* 셀 사이의 여백을 조절할 수 있음 */
+}
+
+th, td {
+    /* 그룹 선택자 */
+    border: 1px dotted #000;
+    width: 100px;
+    /* 표의 가로 길이를 조절함. */
+}
+
