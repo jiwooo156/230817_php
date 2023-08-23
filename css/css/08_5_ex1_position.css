@@ -1,0 +1,72 @@
+/* position : 기준을 기준으로 움직임
+ex) top: 0px, left: 0px 이면 
+기준의 맨 top, 기준의 맨 left인 왼쪽맨위꼭지점에 붙음*/
+/* position도 float랑 비슷한데, float는 다른객체?와 병행?하는데 반해,
+position은 아예 맨 윗 레이어로 올라옴. 다른객체 덮어버림. */
+
+main, section, article {
+    padding: 20px;
+}
+
+main {
+    background-color: cadetblue;
+}
+
+section {
+    background-color: antiquewhite;
+}
+
+article {
+    background-color: darkgreen;
+    height: 1000px;
+}
+
+.div_static {
+    background-color: lightgray;
+    position: static;
+    /* position을 설정했는데 결과가 바뀐게 없다 = static은 원래 기본으로 설정되어있다. */
+}
+
+.div_relative {
+    background-color: aquamarine;
+    position: relative;
+    left: -30px;
+    top: -50px;
+    /* 위치변화를 주면 static을 기준으로해서 움직임. 
+    서로 반대되는 위치는 둘 중 하나만 됨. 
+    ex)top - bottom*/
+}
+
+.div_absolute {
+    background-color: bisque;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    /* relative를 기준으로 위치 설정됨. */
+    /* html의 최상위객체(body)는 relative를 가지고있음 */
+}
+
+.div_fixed {
+    background-color: blueviolet;
+    position: fixed;
+    right: 10%;
+    bottom: 10%;
+ /* 기준이 viewport이기 때문에 정중앙으로 온다. */
+    /* fixed의 기준은 viewport(화면)이다. 
+    그래서 top: 0px주면 맨 top으로 감.*/
+
+}
+
+.div_sticky {
+    background-color: chartreuse;
+    position: sticky;
+    top: 0;
+}
+
+
+
+
+/* 최상위객체 = HTML
+근데 html = body = viewport = 화면. 
+(body에 따로 설정을 해준게 없기때문에.) */

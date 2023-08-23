@@ -1,0 +1,38 @@
+div {
+    width: 150px;
+    height: 150px;
+    border: 5px solid #000;
+    padding: 20px;
+    background-color: antiquewhite;
+}
+
+.div-1 {
+    width: 150px;
+    height: 150px;
+    border: 5px solid #000;
+    padding: 20px;
+    box-sizing: border-box;
+    /* border + padding + margin 을 다 포함한 총 길이를 150으로 봄 */
+    /* 반응형 웹을 만드려면 border box가 나음. content box를 쓰면 생각보다 더 커지기 떄문에. */
+}
+
+.div-2 {
+    width: 150px;
+    height: 150px;
+    border: 5px solid #000;
+    padding: 20px;
+    box-sizing: content-box;
+    /* content만 150으로 봄. 그래서 border,padding,margin 다 포함시키면 200이 되는거임 */
+    /* 디폴트 값은 content box임. 그래서 따로 지정 안해주면 content box로 설정됨. */
+}
+
+.div-3 {
+    width: 150px;
+    height: 150px;
+    border: 5px solid #000;
+    padding: 20px;
+    box-shadow: 10px 10px 10px 10px green inset;
+    /* box-shadow 박스 모델에 그림자 효과를 줌 */
+    /* box-shadow (좌우, 상하, 투명도, 번지는 정도, 그림자색, inset 설정하면 그림자가 박스 안쪽으로 잡힘.) */
+
+}

@@ -1,0 +1,20 @@
+ul {
+    list-style-type: none;
+    /* 사실 이거 안써도 화면상으로는 불릿이 안보이긴 한데..
+    이걸 써 줘야 확실하게 불릿이 없어짐. */
+}
+
+li {
+    background-color: aqua;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    text-align: center;
+    line-height: 150px;
+    /* 가로중간정렬은 text-align / 세로중간정렬은 line-height와 height길이를 맞춰줌 */
+    /* padding으로 중간정렬 할수도있긴함. 근데 지금 쓴 방식으로 중간정렬해주는게 좀 더 정확*/
+    margin-right: -6px;
+    /* 그냥 margin으로 여백을 조절하면 필요없는 부분도 여백이 생김. 
+        그래서 margin-right으로 오른쪽 여백만 조절해줌. */
+    box-sizing: border-box;
+}

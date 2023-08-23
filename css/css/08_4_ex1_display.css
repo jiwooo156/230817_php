@@ -1,0 +1,33 @@
+.none {
+    display: none;
+    /* 태그상으로는 존재하지만 화면상에는 보이지 않음. 
+    !!!영역도 안잡힘 = 영역이 아예 사라짐!!!. */
+    /* 영역 자체가 아예 사라지기 때문에 해당 태그에 달려있는 자식 태그도 영역이 사라짐, */
+}
+
+.block {
+    display: block;
+}
+
+span {
+    border: 1px solid #000;
+    width: 150px;
+}
+
+/* 블록레벨이냐 인라인레벨이냐에 따라서 스타일을 줄 수있는게 다름 */
+/* 인라인 속성에는 width 설정을 줄 수 없음. content부분만 길이가 지정됨. */
+
+.inline { 
+    display: inline;
+}
+
+div {
+    border: 5px solid #000;
+    padding: 10px;
+}
+
+.inline-block {
+    border: 1px solid #000;
+    width: 150px;
+    display: inline-block;
+}

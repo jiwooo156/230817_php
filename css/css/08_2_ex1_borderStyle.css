@@ -1,0 +1,53 @@
+
+div {
+    width: 200px;
+    height: 20px;
+    margin: 5px;
+    /* 공통되는 조건은 div로 빼서 전체적으로 적용해줌. */
+}
+
+.div-1 {
+    border-style: none;
+}
+
+.div-2 {
+    border-style: solid;
+    border-color: blue;
+    border-width: 5px 10px 15px 20px;
+    /* border-width (상하실선 굵기, 좌우실선 굵기) */
+    /* border-width 4면의 굵기 모두 설정해주면 시계방향으로 설정됨. */
+}
+
+.div-3 {
+    border-style: dotted;
+    border-width: 5px;
+    /* border-width : 점선의 굵기 정할 수 있음 */
+}
+
+.div-4 {
+    border-style: dashed;
+    border-width: 5px;
+}
+
+.div-5 {
+    border-style: double;
+    border-width: 5px;
+}
+
+.div-6 {
+    height: 200px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    /* 박스의 모서리를 둥그렇게 만들어줌 */
+    /* border_radius를 높게 설정하면 할수록 점점 동그라미가 됨. */
+
+}
+
+.div-7 {
+    height: 200px;
+    border: 3px solid #000;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    /* 각각의 모서리마다 따로 설정해 줄 수 있음. */
+}
