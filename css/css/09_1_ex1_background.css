@@ -1,0 +1,11 @@
+h1 {
+    background-color: rgb(135, 224, 132);
+    border: 10px dotted #000;
+    /* 외곽선은 border영역임. */
+    background-clip: content-box;
+    /* 기본값은 border-box임 */
+    /* content-box(컨텐츠부분만 배경색 들어감), padding-box() 설정은 외곽선에 배경색 안들어가게 함. */
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+}

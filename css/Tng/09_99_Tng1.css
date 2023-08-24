@@ -1,0 +1,44 @@
+body { 
+    background-color: #02233b;
+    font-size: x-large;
+}
+#container {
+    background-color: white;
+    width: 1000px;
+    height: 1100px;
+    margin: auto;
+    /* background: url(../img/space.jpg) right bottom no-repeat; */
+    padding: 30px;
+    position: relative;
+}
+.title {
+    background-color: #004344;
+    color: white;
+    /* width: 900px; */
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    /* padding으로 중간정렬 해줘도 됨 */
+}
+h2 {
+    text-align: center;
+}
+h3 {
+    color: red;
+}
+li {
+    list-style: none;
+    /* 목록으로 작성 안하고 p태그 쓴다음에 css로 들여쓰기(text-indent), 이탤릭체 등등 효과 줘도 됨. */
+}
+.image {
+    background-image: url(../img/space.jpg) ;
+    width: 320px;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+/* 근데 image태그 따로 안빼고 그냥 container태그 안에 넣어도 됨.
+   대신 background 묶음?으로 사진영역 크기 정해주면 background-color랑 겹치지 않음 (background태그에 모든 정보 다 한 줄로 작성해도됨.) */

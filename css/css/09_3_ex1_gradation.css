@@ -1,0 +1,32 @@
+div {
+    width: 400xp;
+    height: 200px;
+    border: 2px solid #000;
+}
+.div1 { 
+    background: linear-gradient(
+        to right
+        ,red
+        ,orange
+        ,yellow
+        ,green
+        ,blue
+        ,navy
+        ,purple
+    );
+    /* 선형 그라데이션 효과 줌 */
+    /* to left는 오른쪽에서 시작해서 왼쪽으로 진행된다는 의미. to right는 반대. */
+    /* 첫번째 색은 시작 색깔, 두번째 색은 종료 색깔. */
+}
+
+.div2 { 
+    background: radial-gradient(
+        circle 
+        ,red
+        ,orange
+        ,yellow
+        ,green
+        ,blue
+    );
+    /* 원형 그라데이션 효과 줌 */
+}

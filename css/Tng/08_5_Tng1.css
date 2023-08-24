@@ -1,0 +1,49 @@
+
+.container { 
+    border: 1px solid #000;
+    width: 1000px;
+    height: 1000px;
+    position: relative;
+}
+/* position박스들이 들어갈 전체박스를 container로 잡았음 */
+/* position박스들의 기준을 통일 시켜줘야 하므로 container박스를 기준으로 잡았음. */
+/* 기준으로 잡기 위해서 position을 설정해 줬음. relative로. */
+
+.pos1 { 
+    position: absolute;
+    border: 1px solid #000;
+    width: 200px;
+    height: 200px;
+    left: 50px;
+    top: 50px;
+}
+/* relative로 설정해준 container를 기준으로 움직여야 하므로 relative를 기준으로 잡고 움직이는 position인 absolute를 설정해 줬음. */
+
+.pos2 {
+    position: absolute;
+    border: 1px solid #000;
+    width: 200px;
+    height: 200px;
+    left: 300px;
+    top: 100px;
+}
+/* relative로 설정해준 container를 기준으로 움직여야 하므로 relative를 기준으로 잡고 움직이는 position인 absolute를 설정해 줬음. */
+
+.pos3 { 
+    position: absolute;
+    border: 1px solid #000;
+    width: 200px;
+    height: 200px;
+    left: 50px;
+    bottom: 200px;
+}
+/* relative로 설정해준 container를 기준으로 움직여야 하므로 relative를 기준으로 잡고 움직이는 position인 absolute를 설정해 줬음. */
+
+
+/* position들이 div로 묶여있기 때문에, 가로세로너비같은 통일된 값은 div태그에 값 설정해 주면 됨.
+
+ex) div {
+        border: 1px solid #000;
+        width: 200px;
+        height: 200px; 
+}*/
