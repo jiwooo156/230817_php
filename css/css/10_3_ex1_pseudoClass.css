@@ -1,0 +1,77 @@
+a {
+    color: burlywood;
+}
+
+a:link {
+    color: blueviolet;
+}
+
+a:visited {
+    color: green;
+    /* 방문했던 링크는 초록색으로 표시됨 */
+}
+
+a:hover {
+    background-color: cornflowerblue;
+    /* 마우스커서를 갖다대면 색이 바뀜 */
+    /* 네비게이션 기능에 많이 쓰임 */
+}
+
+#input-1:focus {
+    outline: none;
+    border: 2px solid yellow;
+    /* 검색창을 눌렀을때 검색창의 색이 바뀜. */
+    /* focus말고 active를 주면 순간에만 적용됨. */
+    /* #input-1:focus는 선택자.
+        #input-1은 id선택자.
+        :뒤에 오는 focus는 가상선택자 */
+}
+input:checked + label {
+    color: orange;
+    /* + label= 인접한 대행자에 효과를 줌
+        항상 동생요소에게만 적용되기때문에 적용하려는 요소를 아랫줄로 작성해줘야함. */
+}
+
+#target-1:target {
+    background-color: red;
+    /* target(클릭했을때)이 됐을 때 적용함. */
+    /* #target-1이 target이 된것임. */
+}
+
+/* .container :nth-child(4) {
+    color: yellow; */
+    /* container라는 부모요소의 자식요소를 선택할건데, 몇번째를 선택할껀지 정할수있음. 
+    (특정 하나만 선택되는것)*/
+}
+
+.container p:nth-of-type(3) {
+    color: green;
+    /* container라는 부모요소의 자식요소 중 p태그의 동생요소를 선택? */
+}
+
+.container :not(p) {
+    color: chartreuse;
+    /* container의 자식요소 중에 p태그 아닌것에만 적용 */
+    /* 복수로 선택할 수 있음. 그래서 단독으로 선택하는 애들보다 우선순위가 낮을 수 있음. */
+}
+#label-2::before {
+    content: '중요';
+/* input태그는 content를 넣을 수 있는 공간이 없으므로
+label에 content 넣어줌? */
+/* after로 설정하면 label뒤에 오고, before로 설정하면 label 앞에 온다. */
+    color: aqua;
+}
+
+/* 가상선택자가 하나면 띄어쓰지않고,
+    가상선택자가 여러개 올 수 있으면 띄우고 : 넣는다? */
+
+.korean-1::first-letter {
+    background-color: black;
+    /* 첫글자에 효과줌 */
+}
+
+.korean-2::first-line {
+    background-color: black;
+    /* 첫째줄에 효과줌 */
+}
+

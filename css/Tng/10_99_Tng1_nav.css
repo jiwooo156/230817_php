@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    margin: 10px auto;
+    width: 605px;
+    height: 40px;
+    box-shadow: 1px 10px 15px 5px #000;
+}
+
+li {
+    list-style: none;
+    border-right: 1px solid #000; 
+    float: left;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: gray;
+}
+
+ul li:last-of-type {
+    border-right: 0px;
+}
+
+ul li:not(:last-child) a:hover {
+    background-color: #555;
+    /* ul : 부모 li : 자식 a : 자손  |  li:not(:last-child) = 자식요소인 li에서 마지막child 뺀 나머지 요소들중에 / a:hover = a에게 hover 적용한다.  */
+    /* :not(:last-child) 조건 안줘도 되기는 됨. li 전체에 적용됨. 
+    li 전체에 적용하고 그 뒤에 ul li:last-child a:hover {} 설정해주면 마지막으로 설정한게 우선순위가 높으니까 덮어씌우게 됨. */
+    color: white;
+    
+} 
+
+ul li:last-child a:hover {
+    background-color: #b30000;
+    color: #fff;
+}
+
+a {
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    /* hover가 content에만 잡히는 issue해결하기 위해
+        a로 잡은 content들 inline-block으로 만들엉주고
+        원하는 만큼 영역잡기 위해 width랑 height 잡으면 됨. */
+    text-decoration-line: none;
+    color: black;
+}
+/* boxsizing : border box = 보더까지 박스로 잡음.  */
