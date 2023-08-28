@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+}
+.ball {
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: cornflowerblue;
+    border-radius: 50%;
+    /* 가장자리 동그랗게 만들어줌 */
+    animation: moveUpDown 1s ease-in-out infinite alternate;
+    /* moveUpDown에서 대소문자는 카멜기법으로 작성해서 그럼. 그냥 하고싶은 이름해도됨. */
+}
+@keyframes moveUpDown {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100px);
+    }
+}

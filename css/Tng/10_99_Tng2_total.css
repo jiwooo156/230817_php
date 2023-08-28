@@ -1,0 +1,68 @@
+fieldset {
+    color: rgb(120, 230, 197);
+    width: 500px;
+    margin: auto;
+    background-image: url(../img/space.jpg);
+}
+input[type="text"]:focus {
+    border-color: red;
+    outline: none;
+}
+input[type="number"]:focus {
+    border-color: red;
+    outline: none;
+}
+input[type="radio"] {
+    color: red;
+}
+#male:focus {
+    color: red;
+    outline: none;
+}
+.checkplz {
+    background-color: rgba(245, 245, 245, 50%)
+    color: rgb(0 0 0)
+}
+.relative {
+    position: relative;
+}
+.checkplz{
+    position: absolute;
+    bottom: 0px;
+    left: 80px;
+}
+#submit:hover + .checkplz {
+    display: block;
+    float: left;
+    /* button에 마우스커서 갖다대면 옆에 text 뜨도록 */
+    /* 선생님은 hover ::after로 선택자 설정하고, 
+        button을 relative, 내용을 다시한번~을 absolute로 지정해서 
+        버튼을 기준으로 잡고 움직이게 함. */
+}
+input:checked + label {
+    color: red;
+}
+.memo {
+    float: left;
+    /* 요청사항 제목을 위로 띄우려면 */
+    /* 선생님은 verticla-align: top으로 위치 지정함. */
+}
+input {
+    margin: 10px;
+    /* 항목마다 줄 간격 좀 띄워주려고 씀. */
+}
+textarea:focus {
+    border-color: red;
+    outline: none;
+}
+span {
+    color: red;
+}
+#name, #number, #texta {
+    background-color: transparent;
+    /* 인라인 스타일 보다는 외부 스타일 시트로 빼서 쓰는게 낫다고 해서.
+        효과 주려는 id끼리 묶어서 작성함. */
+}
+
+/* white-space: (공백을 없앨 수 있음) */
+/* focus속성과 hover속성의 차이점은 focus는 클릭해야되고, hover는 커서 갖다대기만 해도됨. */

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="10_99_Tng2_total.css">
+    <title>Document</title>
+    <style>
+        .checkplz {
+        padding: 15px 20px;
+        background-color: #444444;
+        border-radius: 5px;
+        color: #ffffff;
+        position: absolute;
+        display: none;
+      }
+    </style>
+</head>
+<body>
+    
+        <fieldset img="../img/space.jpg" class="relative">
+            <legend><h1>I want YOU!</h1></legend>
+            <!-- h1태그 안쓰고 css로 스타일 설정해도됨 -->
+           <form action=""> 
+            <label for="name"><span>*</span>이름</label>
+            <input type="text" name="name" id="name" required>
+            <br>
+            <label for="number"><span>*</span>나이</label>
+            <input type="number" name="number" id="number" min="20" required>
+            <br>
+            <label><span>*</span>성별</label>
+            <input type="radio" name="gender" id="male" required>
+            <label for="male">남성</label>
+            <input type="radio" name="gender" id="female" required>
+            <label for="female">여성</label>
+            <br>
+            <label for="texta" class="memo">요청사항</label>
+            <textarea id="texta" rows="10" cols="30" placeholder="요청 사항 입력"></textarea>
+            <br>
+            <button type="submit" id="submit">보내기</button>
+            <div class="checkplz">내용을 다시 한 번 확인해 주세요</div>
+           </form>
+        </fieldset>
+    
+</body>
+</html>
