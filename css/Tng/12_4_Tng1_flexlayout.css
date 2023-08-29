@@ -1,0 +1,59 @@
+.container {
+    /* width: 500px;
+    height: 800px; */
+    /* justify-content: space-evenly;
+    align-content: space-evenly; */
+    display: flex;
+    width: 500px;
+    height: 500px;
+    background-color: gray;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    padding: 10px;
+}
+
+
+
+.item {
+    /* width: 15vw;
+    height: 20vh;
+    border: 1px solid #000;
+    background-color: aquamarine; */
+    width: 49%;
+    height: 32%;
+    /* %는 부모가 가지고 있는 영역기준으로 몇퍼인지 측정됨. */
+    background-color: cadetblue;
+    border: 1px solid #000;
+}
+
+
+
+/* .row-1 {
+    width: 90%;
+} */
+
+
+
+.item-box {
+    display: flex;
+    /* 5,6번의 부모요소인 item-box한테 flex 줘야됨. flex는 부모요소한테 주는 거기때문에
+        5,6번은 손자라서 안먹힘. */
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+    justify-content: space-between;
+}
+
+
+
+.row-1 {
+    width: 100%;
+    /* 부모영역의 100%로 주겟다. */
+}
+
+
+
+.col-2 {
+    height: 47%;
+}

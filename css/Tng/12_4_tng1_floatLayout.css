@@ -1,0 +1,23 @@
+.container {
+    background-color: gray;
+    margin: 10px;
+    width: 60vw;
+    height: 60vh;
+
+}
+.item {
+    width: 15vw;
+    height: 15vh;
+    background-color: skyblue;
+    border: 1px solid #000;
+    float: left;
+}
+.item1 {
+    width: 15vw;
+    height: 15vh;
+    background-color: skyblue;
+    border: 1px solid #000;
+    float: left;
+    opacity: 0;
+    box-sizing: content-box;
+}

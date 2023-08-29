@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="12_4_Tng1_flexlayout.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item row-1">3</div>
+        <div class="item">4</div>
+        <div class="item item-box">
+            <div class="item row-1 col-2">5</div>
+            <!-- 얘의 부모영역은 item-box이므로 width를 부모영역의 100%로 설정. -->
+            <div class="item row-1 col-2">6</div>
+        </div>
+    </div>
+</body>
+</html>
