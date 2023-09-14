@@ -133,8 +133,9 @@ foreach($arr2["key2"] as $key => $val){
     echo "{$key} : {$val}\n";
 }
 
-
-
+define("MSG", "에러가 발생했습니다. (CODE : %s)");
+$msg = sprintf(MSG, "E01");
+echo $msg;
 
 
 
