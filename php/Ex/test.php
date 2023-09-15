@@ -8,14 +8,17 @@
 // }
 
 
-$arr = [1, 2, 3];
+// $arr = [1, 2, 3];
 
-$arr2 = [
-    "key" => "val1"
-    ,"key2" => "val2"
-];
+// $arr2 = [
+//     "key" => "val1"
+//     ,"key2" => "val2"
+// ];
 
-echo $arr[2]."\n";
-echo $arr2["key2"];
+// echo $arr[2]."\n";
+// echo $arr2["key2"];
+
+
+
 
 ?>
