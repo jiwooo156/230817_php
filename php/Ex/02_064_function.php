@@ -72,22 +72,45 @@
 
 // 재귀 함수 (내가 나를 호출하는 함수)
 // 1 + 2 + 3 + ... + 자기자신
-function my_ap($i){
-    $sum = 0;
-    for($i; $i > 0; $i--){
-        $sum += $i;
-    }
-    return $sum;
-}
-echo my_ap(10000);
+// function my_ap($i){
+//     $sum = 0;
+//     for($i; $i > 0; $i--){
+//         $sum += $i;
+//     }
+//     return $sum;
+// }
+// echo my_ap(10000);
 
 
-function my_recursion($i){
-    if($i === 0){
-        return $sum;
-    }
-    return $i + my_recursion($i - 1);
+// function my_recursion($i){
+//     if($i === 0){
+//         return $sum;
+//     }
+//     return $i + my_recursion($i - 1);
+// }
+// echo my_recursion(3);
+
+
+
+// 레퍼런스 파라미터
+function test1( $str ) {
+    $str = "함수 test1";
+    return $str;
 }
-echo my_recursion(3);
+function test2( &$str ) {       // 레퍼런스 파라미터 = 주소값을 보내줌?
+    $str = "함수 test2";
+    return $str;
+}
+
+// $str = "???";       // 함수는 호출해야 실행되므로 얘가 먼저 실행됨.
+// $result = test1( $str );    //함수의 $str을 대입 // ???
+// echo $str, "\n";            //main의 $str을 출력
+// echo $result;               //함수의 $str.  // 함수test1
+
+$string = "???";                   // 함수에 &$str과 메인의 $string이 같은애임. 그래서 함수에서 새로운 값을 대입해주면 main의 변수에도 대입이됨.
+$result = test2( $string );    
+echo $string, "\n";          
+echo $result; 
+
 
 ?>
