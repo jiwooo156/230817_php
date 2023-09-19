@@ -9,6 +9,17 @@
 
 
 
-SELECT * FROM employees WHERE emp_no = 500005;
-
+-- SELECT * FROM employees WHERE emp_no = 500005;
+-- 
 -- FLUSH PRIVILEGES;
+
+SELECT 
+	emp.emp_no 
+	,sal.salary 
+	,
+FROM 
+	employees AS emp 
+	JOIN salaries AS sal 
+	ON emp.emp_no = sal.emp_no 
+	AND to_date >= NOW()
+WHERE sal.salary >= 80000;
