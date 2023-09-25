@@ -1,0 +1,27 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	width: 1000px;
+	height: 500px;
+}
+
+h1 {
+	padding: 0px;
+	margin: 0px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	width: 100%;
+}
+
+tr {
+	padding: 0px;
+	margin: 0px;
+	background-color: black;
+	color: white;
+	/* border-left: 0;
+	border-right: 0; */
+	width: 100%
+}
