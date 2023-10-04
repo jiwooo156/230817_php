@@ -13,8 +13,9 @@
 // 리턴     : boolen
 // ---------------------------------
 function my_db_conn( &$conn ) {
+	// 참조해온 $conn은 함수를 호출한 파일에 선언되어 있는게 원본이 됨.
 	$db_host	= "localhost"; // host
-	$db_user	= "root"; // user
+	$db_user	= "root"; // user id
 	$db_pw		= "php504"; // password
 	$db_name	= "mini_board"; // DB name
 	$db_charset	= "utf8mb4"; // charset

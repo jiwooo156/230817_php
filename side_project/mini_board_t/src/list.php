@@ -3,7 +3,7 @@ define("ROOT", $_SERVER["DOCUMENT_ROOT"]."/mini_board/src/"); // 웹서버 root 
 define("FILE_HEADER", ROOT."header.php"); // 헤더 패스
 require_once(ROOT."lib/lib_db.php"); // DB관련 라이브러리
 
-$conn = null; // DB Connection 변수
+$conn = null; // DB Connection 변수	
 $list_cnt = 5; // 한 페이지 최대 표시 수
 $page_num = 1; // 페이지 번호 초기화
 
