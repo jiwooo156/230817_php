@@ -58,7 +58,8 @@ try {
 	}
 
 } catch(Exception $e) {
-	echo $e->getMessage(); // 예외발생 메세지 출력
+	// echo $e->getMessage(); // 예외발생 메세지 출력	//v002 del
+	header("Location: /mini_board/src/error.php/?err_msg={$e->getMessage()}");
 	exit; // 처리 종료
 } finally {
 	db_destroy_conn($conn); // DB 파기

@@ -80,7 +80,8 @@ try {
 	if($http_method === "POST") {
 		$conn ->rollback();
 	}
-	echo $e->getMessage();	// 에러메세지 출력
+	// echo $e->getMessage();	// 에러메세지 출력
+	header("Location: /mini_board/src/error.php/?err_msg={$e->getMessage()}");	// v002 add
 	exit;	//처리종료
 } finally {
 	db_destroy_conn($conn);

@@ -37,7 +37,8 @@ try {
 	}
 	$item = $result[0];
 } catch(Exception $e) {
-	echo $e->getMessage(); // 예외 메세지 출력
+	// echo $e->getMessage(); // 예외 메세지 출력
+	header("Location: /mini_board/src/error.php/?err_msg={$e->getMessage()}");	// v002 add
 	exit; // 처리종료
 } finally {
 	db_destroy_conn($conn); // DB 파기
