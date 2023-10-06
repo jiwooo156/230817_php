@@ -1,0 +1,12 @@
+1. 깃허브 로긴
+2. 우측 상단 프사 클릭
+3. your organization누름
+4. new organization
+5. free
+6. 	- organization account name : 팀 레퍼지토리 이름
+		- contact email : 조장 메일
+		- my perconal account
+		- 동의하고 next
+7. add organization members ( 팀원 메일 or 깃허브 추가 )
+8. create하면 끝
+9. 조원 권한 owner로 설정해주기
