@@ -18,7 +18,7 @@
 // let u_name = "홍길동";
 // console.log(u_name);
 // u_name = "갑순이"; // 중복 선언 안돼서 앞에 let 지시자 못 붙임.
-// console.log(u_name);
+// console.log(u_name); // 값은 갑순이.
 
 // const : 중복 선언 불가능, 재할당 불가능, 블록레벨 스코프
 // 상수와 비슷함
