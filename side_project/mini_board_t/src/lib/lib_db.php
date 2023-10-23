@@ -100,11 +100,17 @@ function db_select_boards_cnt(&$conn) {
 		."		delete_flg = '0' "
 		;
 	
+		// user 입력 정보 필요 없으므로
+		// 파라미터에 $arr_param 안들어감.
+		// 따라서 arr_ps도 필요 없음
 		try {
 			$stmt = $conn->query($sql);
 			$result = $stmt->fetchAll();
 
-			return (int)$result[0]["cnt"]; // 정상 : 쿼리 결과 리턴
+			return (int)$result[0]["cnt"]; 
+			// 정상 : 쿼리 결과 리턴
+			// 값 : 전체 행의 갯수 = 값이 1개
+			// 나온 값이 str일수도있으니까 int로 만들어서(type까지 일치시켜서)오류 낮춤
 		} catch(Exception $e) {
 			return false; // 예외발생 : flase 리턴
 		}
