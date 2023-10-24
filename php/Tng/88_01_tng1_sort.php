@@ -17,7 +17,7 @@
     $arr = [5, 34, 3, 2, 6, 7, 12];
     $len = count($arr);
 
-    for ($cnt = 0; $cnt < $len; $i++) 
+    for ($cnt = 0; $cnt < $len; $cnt++) 
     {
         for ($idx = 0; $idx < $len - 1 - $cnt; $idx++) 
         {
