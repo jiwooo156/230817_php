@@ -1,5 +1,5 @@
 // Date
-// let now = new Date(); // Date는 클래스가 아님
+// let now = new Date(); // Date는 객체이다.
 // let sDate = new Date('2023-09-30 19:20:10'); // Sat Sep 30 2023 19:20:10 GMT+0900 (한국 표준시)
 
 // // getFullYear() : 연도만 가져오는 메소드
