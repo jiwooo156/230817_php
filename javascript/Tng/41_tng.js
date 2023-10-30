@@ -9,7 +9,7 @@ function ntime() {
     let hours = NOW.getHours(); 
     let minutes = NOW.getMinutes();
     let seconds = NOW.getSeconds(); 
-    let nhour = hours - 12; 
+    let nhour = hours - 12; // -시간이 뜸......
     const DIV1 = document.querySelector('#div1');
     DIV1.innerHTML = '현재 시간 ' + nhour + '시 ' + minutes + '분 ' + seconds + '초'; // 실시간 화면에 출력
     DIV1.style.fontSize = '100px'
