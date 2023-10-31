@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: black;
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    line-height: 200px;
+    
+}
+
+header>h1>a {
+    text-decoration: none;
+    color: white;
+    /* font-weight: 800; */
+}
+
+
+.btn-prenex {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    color: white;
+}
+
+td {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 0;
+	max-width: 200px;
+}
+
+th {
+    text-align: center;
+    background-color:rgb(142, 162, 255);
+    padding: 10px 0;
+    color: rgb(255, 255, 255);
+}
+
+.container {
+    /* background-color: white; */
+    width: 1000px;
+    margin: 50px auto;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.btn-write {
+    display: block;
+    width: 70px;
+    height: 70px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+tr {
+    background-color: black;
+}
+
+label>.title {
+    background-color: black;
+    color: white;
+    width: 200px;
+    height: 200px;
+    padding: 0 0; 
+}
+
+input[type=text] {
+    box-sizing: border-box;
+    width: 1000px;
+    height: 200px;
+    background-color: black;
+}
+
+
+
+textarea {
+    width: 1200px;
+    height: 400px;
+    border: none;
+    resize: none;
+    background-color: black;
+    color: white;
+}
+
+.btn-insert {
+    width: 300px;
+    height: 50px;
+    background-color: gray;
+}
+

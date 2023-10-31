@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    background-color: black;
+    color: white;
+    font-size: 150px;
+    height: 200px;
+    text-align: center;
+    margin: 0;
+}
+
+#div1 {
+    /* input, button 영역 */
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+#div-img {
+    /* 사진+id 전체 영역 */
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin: 0 auto;
+    grid-gap: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.div2 {
+    /* 각각 사진+id 영역 */
+    background-color: rgb(207, 207, 207);
+    width: 100%;
+}
