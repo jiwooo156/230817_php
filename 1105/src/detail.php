@@ -40,11 +40,11 @@ try {
 
 	$item = $result[0];
 } catch(Exception $e) {
-	// echo $e->getMessage(); // 예외발생 메세지 출력  //v002 del
-	header("Location: /mini_board/src/error.php/?err_msg={$e->getMessage()}"); // v002 add
-	exit; // 처리종료
+	// echo $e->getMessage(); // 예외발생 메세지 출력 
+	header("Location: /1105/src/error.php/?err_msg={$e->getMessage()}"); 
+	exit; 
 } finally {
-	db_destroy_conn($conn); // DB 파기
+	db_destroy_conn($conn); 
 }
 
 ?>
@@ -65,24 +65,24 @@ try {
 		<table class="table-striped">
 			<!-- <tr>
 				<th class="radius-left">게시글 번호</th>
-				<td class="radius-right"><?php echo $item["id"]; ?></td>
+				<td class="detail-table"><?php //echo $item["id"]; ?></td>
 			</tr> -->
 			<tr>
-				<th class="radius-left">제목</th>
-				<td class="radius-right"><?php echo $item["title"]; ?></td>
+                <!-- <th class="radius-left">id</th> -->
+                <td class="detail-table detail-box"><?php echo $item["id"]; ?></td>
+				<!-- <th class="radius-left">제목</th> -->
+				<td class="detail-table detail-box"><?php echo $item["title"]; ?></td>
+                <!-- <th class="radius-left">작성일자</th> -->
+				<td class="detail-table detail-box"><?php echo $item["create_at"]; ?></td>
 			</tr>
 			<tr>
-				<th class="radius-left">내용</th>
-				<td class="radius-right"><?php echo $item["content"]; ?></td>
-			</tr>
-			<tr>
-				<th class="radius-left">작성일자</th>
-				<td class="radius-right"><?php echo $item["create_at"]; ?></td>
+				<!-- <th class="radius-left">내용</th> -->
+				<td class="detail-cntt"><?php echo $item["content"]; ?></td>
 			</tr>
 		</table>
 		<section class="button">
 			<a class="button_a" href="/1105/src/update.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">수정</a>
-			<a class="button_a" href="/1105/src/list.php/?page=<?php echo $page; ?>">취소</a>
+			<!-- <a class="button_a" href="/1105/src/list.php/?page=<?php echo $page; ?>">취소</a> -->
 			<a class="button_a" href="/1105/src/delete.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">삭제</a>
 		</section>
 	</main>
