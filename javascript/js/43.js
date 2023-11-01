@@ -129,3 +129,22 @@ function clearImg() {
     // const DIV_IMG = document.querySelector('#div-img');
     // DIV_IMG.innerHTML = "";
 }
+
+
+// fetch 2번째 아규먼트 셋팅 방법
+function infinityLoop() {
+    let apiUrl = "http://192.168.0.82:6001/03_insert.php"
+    // init으로 객체를 만들어줌
+    let init = {
+        method: "POST"
+        ,body: {
+            title: "아아아"
+            ,content: "오오옹"
+            ,em_id: "2"
+        }
+    };
+    // 만든객체는 fetch에 대입됨
+    fetch(apiUrl, init)
+    .then( response => console.log(response) )
+    .catch( error => console.log(error) );
+}
