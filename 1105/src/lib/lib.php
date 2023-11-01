@@ -20,7 +20,6 @@ function my_db_conn( &$conn ) {
 			,PDO::ATTR_DEFAULT_FETCH_MODE	=> PDO::FETCH_ASSOC
 		];
 
-		// PDO Class로 DB 연동
 		$conn = new PDO($db_dns, $db_user, $db_pw, $db_options);
 		return true;
 	} catch (Exception $e) {
@@ -60,10 +59,10 @@ function db_select_boards_cnt(&$conn) {
 			$stmt = $conn->query($sql);
 			$result = $stmt->fetchAll();
 
-			return (int)$result[0]["cnt"]; // 정상 : 쿼리 결과 리턴
+			return (int)$result[0]["cnt"]; 
 		} catch(Exception $e) {
-			echo $e->getMessage(); // Exception 메세지 출력
-			return false; // 예외발생 : flase 리턴
+			echo $e->getMessage(); 
+			return false; 
 		}
 }
 
@@ -98,10 +97,10 @@ function db_select_boards_paging(&$conn, &$arr_param) {
 		$stmt = $conn->prepare($sql);
 		$stmt->execute($arr_ps);
 		$result = $stmt->fetchAll();
-		return $result; // 정상 : 쿼리 결과 리턴
+		return $result; 
 	} catch(Exception $e) {
-		echo $e->getMessage(); // Exception 메세지 출력
-		return false; // 예외발생 : flase 리턴
+		echo $e->getMessage(); 
+		return false; 
 	}
 }
 
@@ -131,10 +130,10 @@ function db_insert_boards(&$conn, &$arr_param) {
 	try {
 		$stmt = $conn->prepare($sql);
 		$result = $stmt->execute($arr_ps);
-		return $result; //  // 정상 : 쿼리 결과 리턴
+		return $result; //  
 	} catch(Exception $e) {
-		echo $e->getMessage(); // Exception 메세지 출력
-		return false; // 예외발생 : flase 리턴
+		echo $e->getMessage(); 
+		return false; 
 	}
 }
 
@@ -169,8 +168,8 @@ function db_select_boards_id(&$conn, &$arr_param) {
 		$result = $stmt->fetchAll();
 		return $result;
 	} catch(Exception $e) {
-		echo $e->getMessage(); // Exception 메세지 출력
-		return false; // 예외발생 : flase 리턴
+		echo $e->getMessage(); 
+		return false; 
 	} 
 }
 
@@ -203,6 +202,41 @@ function db_delete_boards_id(&$conn, &$arr_param) {
 	} catch(Exception $e) {
 		echo $e->getMessage(); 
 		return false;
+	}
+}
+
+
+// ---------------------------------
+// 함수명   : db_update_boards_id
+// 기능     : boards 레코드 수정
+// 파라미터 : PDO		&$conn
+//			 Array		&$arr_param 쿼리 작성용 배열
+// 리턴     : boolean
+// ---------------------------------
+function db_update_boards_id(&$conn, &$arr_param) {
+	$sql =
+		" UPDATE "
+		."		boards "
+		." SET "
+		." 		title = :title "
+		."		,content = :content "
+		// ."		,create_at = NOW() "
+		." WHERE "
+		."		id = :id "
+		;
+	$arr_ps = [
+		":title" => $arr_param["title"]
+		,":content" => $arr_param["content"]
+		,":id" => $arr_param["id"]
+	];
+
+	try {
+		$stmt = $conn->prepare($sql);
+		$result = $stmt->execute($arr_ps);
+		return $result;
+	} catch(Exception $e) {
+		echo $e->getMessage(); 
+		return false; 
 	}
 }
 ?>
