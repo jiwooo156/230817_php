@@ -14,8 +14,8 @@ try {
     throw new Exception("DB Error : PDO Instance");
     }; 
 
-	$page = isset($_GET["page"]) ? $_GET["page"] : "1"; 
-	if($page === "") {
+	$page_num = isset($_GET["page"]) ? $_GET["page"] : "1"; 
+	if($page_num === "") {
 		$arr_err_msg[] = sprintf(ERROR_MSG_PARAM, "page");
 	}
 	if(count($arr_err_msg) >= 1) {
@@ -65,65 +65,71 @@ try {
 
 ?>
 
+
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/1105/src/css/common.css">
-    <title>리스트페이지</title>
+	<link rel="stylesheet" href="/1105/src/css/common.css">
+    <title>Document</title>
 </head>
 <body>
+    <!-- header 참조 -->
     <?php
         require_once(FILE_HEADER);
     ?>
-	<main class="container">
-		<section class="button_i">
-			<a class="btn-write" href="/1105/src/insert.php">글 작성</a>
-		</section>
-		<table class="table-striped">
-			<thead>
-				<tr>
-					<th class="id_num">게시글 번호</th>
-					<th>게시글 제목</th>
-					<th class="creatat">작성일자</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php
-					// 리스트를 생성
-					foreach($result as $item) {
-				?>
-					<tr>
-						<!-- 게시글 번호 -->
-						<td><?php echo $item["id"]; ?></td>
-						<td>
-							<!-- 제목 (누르면 detail페이지로 이동) -->
-							<a href="/1105/src/detail.php/?id=<?php echo $item["id"]; ?>&page=<?php echo $page_num; ?>">
-								<?php echo $item["title"]; ?>
-							</a>
-						</td>
-						<!-- 생성일자 -->
-						<td><?php echo $item["create_at"]; ?></td>
-					</tr>
-				<?php
-					} 
-				?>
-			</tbody>
-		</table>
-		<section class="button">
-			<a class="btn-prenex" href="/1105/src/list.php/?page=<?php echo $prev_page_num ?>">이전</a>
+    <!-- list 전체 영역 -->
+    <main class="list_main">
+
+        <table>
+			<colgroup>
+			<col width="20%" />
+			<col width="50%" />
+			<col width="30%" />
+			</colgroup>
+            <?php
+                // 리스트를 생성
+                foreach($result as $item) {
+            ?>
+                <tr>
+                    <!-- 글 번호 -->
+                    <td class="list_list"><?php echo $item["id"]; ?></td>
+                    <!-- 제목 : 누르면 detail 페이지로 이동 -->
+                    <td class="list_list">
+                        <a class="title_a" href="/1105/src/detail.php/?id=<?php echo $item["id"]; ?>&page=<?php echo $page_num; ?>">
+                                        <?php echo $item["title"]; ?>
+                        </a>
+                    </td>
+                    <!-- 작성일자 -->
+                    <td class="list_list"><?php echo $item["create_at"]; ?></td>
+                </tr>
+            <?php
+                } 
+            ?>    
+        </table>
+        <!-- btn_page : 페이지 버튼 전체 -->
+        <section class="btn_page">
+            <a class="btn-prenex" href="/1105/src/list.php/?page=<?php echo $prev_page_num ?>">이전</a>
+
 			<?php 
 				for($i = 1; $i <= $max_page_num; $i++) {
 					$str = (int)$page_num === $i ? "bt-b" : "";
 			?>
 					<!-- 리스트 페이지 번호 출력되고, 누르면 해당 리스트 페이지로 이동 -->
+					<!-- echo $str : 눌린 페이지 버튼 색 변화 줌 like 호버 -->
 					<a class="btn-prenex <?php echo $str ?>" href="/1105/src/list.php/?page=<?php echo $i; ?>"><?php echo $i; ?></a>
 			<?php
 				}
 			?>
-			<a class="btn-prenex" href="/1105/src/list.php/?page=<?php echo $next_page_num ?>">다음</a>
-		</section>
-	</main>
+
+			<a class="btn-prenex" href="/1105/src/list.php/?page=<?php echo $next_page_num ?>">다음</a>   
+        </section>
+
+		<!-- 글작성 버튼 -->
+        <section>
+            <a class="btn-write" href="/1105/src/insert.php">글 작성</a>
+        </section>
+    </main>
 </body>
 </html>

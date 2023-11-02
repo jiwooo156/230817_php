@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- header 참조 -->
+    <?php
+        require_once(FILE_HEADER);
+    ?>
+    <!-- list 전체 영역 -->
+    <main class="list_main">
+        <!-- 글작성 버튼 -->
+        <section class="button_i">
+            <!-- 왜 section에 class 줬지? -->
+            <a class="btn-write" href="/1105/src/insert.php">글 작성</a>
+        </section>
+
+        <table>
+            <?php
+                // 리스트를 생성
+                foreach($result as $item) {
+            ?>
+                <tr>
+                    <!-- 글 번호 -->
+                    <td class="list_list"><?php echo $item["id"]; ?></td>
+                    <!-- 제목 : 누르면 detail 페이지로 이동 -->
+                    <td class="list_list">
+                        <a href="/1105/src/detail.php/?id=<?php echo $item["id"]; ?>&page=<?php echo $page_num; ?>">
+                                        <?php echo $item["title"]; ?>
+                        </a>
+                    </td>
+                    <!-- 작성일자 -->
+                    <td class="list_list"><?php echo $item["create_at"]; ?></td>
+                </tr>
+            <?php
+                } 
+            ?>    
+        </table>
+        <!-- btn_page : 페이지 버튼 전체 -->
+        <section class="btn_page">
+            <a class="btn-prenex" href="/1105/src/list.php/?page=<?php echo $prev_page_num ?>">이전</a>
+
+			<?php 
+				for($i = 1; $i <= $max_page_num; $i++) {
+					$str = (int)$page_num === $i ? "bt-b" : "";
+			?>
+					<!-- 리스트 페이지 번호 출력되고, 누르면 해당 리스트 페이지로 이동 -->
+					<!-- echo $str : 눌린 페이지 버튼 색 변화 줌 like 호버 -->
+					<a class="btn-prenex <?php echo $str ?>" href="/1105/src/list.php/?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+			<?php
+				}
+			?>
+
+			<a class="btn-prenex" href="/1105/src/list.php/?page=<?php echo $next_page_num ?>">다음</a>   
+        </section>
+    </main>
+</body>
+</html>

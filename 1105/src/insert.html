@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/1105/src/css/common.css">
+    <title>작성페이지</title>
+</head>
+<body>
+    <?php
+        require_once(FILE_HEADER);
+    ?> 
+
+    <main>
+        <?php
+        foreach($arr_err_msg as $val) {
+        ?>
+            <p><?php echo $val ?></p>
+        <?php
+            }
+        ?>  
+
+        <form action="/1105/src/insert.php" method="post">
+            <table>
+                <tr>
+                    <label class="input_head" for="head">제목</label>
+                    <input type="text" id="head" value="<?php echo $title ?>">
+                </tr>
+                <tr>
+                    <textarea id="inserdate" cols="30" rows="10" placeholder="오늘의 기분은?"></textarea>
+                </tr>
+            </table>
+            <section>
+                <button class="com_b" type="submit">작성</button>
+                <a class="com_a" href="/1105/src/list.php">취소</a>
+            </section>
+        </form>
+    </main>
+</body>
+</html>
