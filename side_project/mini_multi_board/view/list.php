@@ -8,6 +8,9 @@
     <title>자유게시판 페이지</title>
 </head>
 <body>
+  <header>
+      <?php require_once("view/inc/header.php"); ?>
+  </header>
     <div class="text-center mt-5 mb-5">
         <h1>자유게시판</h1>
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16" data-bs-toggle="modal" data-bs-target="#modalInsert">

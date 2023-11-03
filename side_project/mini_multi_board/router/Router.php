@@ -2,8 +2,8 @@
 namespace router;
 
 // 사용할 컨트롤러들 지정
-use controller\UserController as UC;
-use controller\BoardController as BC;
+use controller\UserController;
+use controller\BoardController;
 
 // 라우터 : 유저의 요청을 분석해서 해당 Controller로 연결해주는 클래스
 // 유저의 요청은 url로 옴 ex) user/login
@@ -25,23 +25,23 @@ class Router {
         if($url === "user/login") {
             if($method === "GET") {
                 // 해당 컨트롤러 호출
-                new UC("loginGet");
+                new UserController("loginGet");
             } else {
                 // 해당 컨트롤러 호출
-                // new User("loginPost");
+                new UserController("loginPost");
             }
         } else if($url === "user/logout") {
             if($method === "GET") {
                 // 해당 컨트롤러 호출
-                // new User("logoutGet");
+                new UserController("logoutGet");
             }
         } else if($url === "user/regist") {
             if($method === "GET") {
             }
-            new UC("registGet");
+            new UserController("registGet");
         } else if($url === "board/list") {
             if($method === "GET") {
-                new BC("listGet");
+                new BoardController("listGet");
             }
         }
 
