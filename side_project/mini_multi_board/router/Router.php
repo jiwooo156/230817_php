@@ -37,14 +37,17 @@ class Router {
                 new UserController("logoutGet");
             }
         } else if($url === "user/regist") {
+            // 회원가입
             if($method === "GET") {
+                new UserController("registGet");
             }
-            new UserController("registGet");
         } else if($url === "board/list") {
+            // 게시판 읽기
             if($method === "GET") {
                 new BoardController("listGet");
             }
         } else if($url === "board/add") {
+            // 게시판에 글 작성
             if($method === "GET") {
                 // 처리 없음
             } else {
