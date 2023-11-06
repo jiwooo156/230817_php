@@ -48,7 +48,7 @@ if($http_method === "POST") {
 		if($conn !== null){
 			$conn->rollBack();
 		}
-		header("Location: /1105/src/error.php/?err_msg={$e->getMessage()}");
+		header("Location: /1105/src/list.php");
 		exit;
 	} finally {
 		db_destroy_conn($conn); // DB 파기

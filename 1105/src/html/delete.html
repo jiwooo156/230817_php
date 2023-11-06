@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/1105/src/css/common.css">
+    <title>삭제페이지</title>
+</head>
+<body>
+    <?php
+	require_once(FILE_HEADER);
+	?>
+    <main>
+        <table>
+            <div class="detail_head_area">
+				<tr>
+					<td class="detail_head"><?php echo $item["id"]; ?></td>
+					<td class="detail_head"><?php echo $item["title"]; ?></td>              
+					<td class="detail_head detail_at"><?php echo $item["create_at"]." / ".$item["update_at"]; ?></td>
+				</tr>
+			</div>
+            <tr>
+                <td class="detail_cell">
+                    당신의 추억
+                    <br>
+                    정말로 삭제 하시겠습니까?
+                    <br>  
+                </td>
+            </tr>
+        </table>
+        <section>
+            <form action="/1105/src/delete.php" method="post">
+				<input type="hidden" name="id" value="<?php echo $id; ?>">
+				<button class="com_b" type="submit">진짜 삭제</button>
+				<a class="com_a" href="/1105/src/detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">보류</a>
+			</form>
+        </section>
+    </main>
+</body>
+</html>

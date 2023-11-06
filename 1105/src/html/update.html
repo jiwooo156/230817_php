@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/1105/src/css/common.css">
+    <title>수정페이지</title>
+</head>
+<body>
+    <?php
+		require_once(FILE_HEADER);
+	?>
+    <main>
+        <?php
+			foreach($arr_err_msg as $val) {
+		?>
+				<p><?php echo $val ?></p>
+		<?php
+			}
+		?>
+        <form action="/1105/src/update.php" method="post">
+            <table>
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
+				<input type="hidden" name="page" value="<?php echo $page; ?>">
+                <tr>
+					<td class="detail_head"><?php echo $item["id"]; ?></td>
+					<td class="detail_head"><?php echo $item["title"]; ?></td>              
+					<td class="detail_head detail_at"><?php echo $item["create_at"]; ?></td>
+				</tr>
+                <tr>
+                    <td>
+                        <textarea class="detail_cell"><?php echo $item["content"]?></textarea> 
+                    </td>
+                </tr>
+            </table>
+            <section>
+                <button class="com_b" type="submit">저장</button>
+                <a class="com_a" href="/1105/src/detail.php">취소</a>  
+            </section>
+
+        </form>
+    </main>
+</body>
+</html>

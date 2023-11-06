@@ -75,7 +75,7 @@ try {
 		$conn->rollBack(); 
 	}
 	echo $e->getMessage(); // 예외발생 메세지 출력  
-	// header("Location: /1105/src/error.php/?err_msg={$e->getMessage()}"); 
+	header("Location: /1105/src/list.php");
 	exit; 
 } finally {
 	db_destroy_conn($conn); 
@@ -84,42 +84,42 @@ try {
 ?>
 
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="/1105/src/css/common.css">
-	<title>삭제 페이지</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/1105/src/css/common.css">
+    <title>삭제페이지</title>
 </head>
 <body>
-	<?php
+    <?php
 	require_once(FILE_HEADER);
 	?>
-	<main class="container">
-		<table class="table-striped">
-			<tr>
-				<th class="radius-left">게시글 번호</th>
-				<td class="radius-right"><?php echo $item["id"] ?></td>
-                <th class="radius-left">작성일</th>
-				<td class="radius-right"><?php echo $item["create_at"] ?></td>
-                <th class="radius-left">제목</th>
-				<td class="radius-right"><?php echo $item["title"] ?></td>
+    <main>
+        <table>
+            <div class="detail_head_area">
+				<tr>
+					<td class="detail_head"><?php echo $item["id"]; ?></td>
+					<td class="detail_head"><?php echo $item["title"]; ?></td>              
+					<td class="detail_head detail_at"><?php echo $item["create_at"]." / ".$item["update_at"]; ?></td>
+				</tr>
+			</div>
+            <tr>
+                <td class="detail_cell">
+                    당신의 추억
+                    <br>
+                    정말로 삭제 하시겠습니까?
+                    <br>  
+                </td>
             </tr>
-            <caption>
-                당신의 추억
-                <br>
-                정말로 삭제 하시겠습니까?
-                <br><br>
-            </caption>
-		</table>
-
-		<section class="button">
-			<form action="/1105/src/delete.php" method="post">
+        </table>
+        <div>
+            <form action="/1105/src/delete.php" method="post">
 				<input type="hidden" name="id" value="<?php echo $id; ?>">
-				<button class="button_a" type="submit">진짜 삭제</button>
-				<a class="button_a" href="/1105/src/detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">보류</a>
+				<button class="com_b" name="delete" id="delete" type="submit">진짜 삭제</button>
+				<a class="com_a" href="/1105/src/detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">보류</a>
 			</form>
-		</section>
-	</main>
+        </div>
+    </main>
 </body>
 </html>

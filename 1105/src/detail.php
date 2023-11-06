@@ -32,7 +32,6 @@ try {
 	$result = db_select_boards_id($conn, $arr_param);
 
 	if($result === false) {
-		var_dump($result);
 		throw new Exception("DB Error : PDO Select_id");
 	} else if(!(count($result) === 1)) {
 		throw new Exception("DB Error : PDO Select_id count");
@@ -40,8 +39,8 @@ try {
 
 	$item = $result[0];
 } catch(Exception $e) {
-	// echo $e->getMessage(); // 예외발생 메세지 출력 
-	header("Location: /1105/src/error.php/?err_msg={$e->getMessage()}"); 
+	echo $e->getMessage(); // 예외발생 메세지 출력 
+	header("Location: /1105/src/list.php");
 	exit; 
 } finally {
 	db_destroy_conn($conn); 
@@ -50,41 +49,37 @@ try {
 ?>
 
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="/1105/src/css/common.css">
-	<title>상세 페이지</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/1105/src/css/common.css">
+    <title>상세페이지</title>
 </head>
 <body>
-	<?php
-		require_once(FILE_HEADER);
-	?>
-	<main class="container">
-		<table class="table-striped">
-			<!-- <tr>
-				<th class="radius-left">게시글 번호</th>
-				<td class="detail-table"><?php //echo $item["id"]; ?></td>
-			</tr> -->
-			<tr>
-                <!-- <th class="radius-left">id</th> -->
-                <td class="detail-table detail-box"><?php echo $item["id"]; ?></td>
-				<!-- <th class="radius-left">제목</th> -->
-				<td class="detail-table detail-box"><?php echo $item["title"]; ?></td>
-                <!-- <th class="radius-left">작성일자</th> -->
-				<td class="detail-table detail-box"><?php echo $item["create_at"]; ?></td>
-			</tr>
-			<tr>
-				<!-- <th class="radius-left">내용</th> -->
-				<td class="detail-cntt"><?php echo $item["content"]; ?></td>
-			</tr>
-		</table>
-		<section class="button">
-			<a class="button_a" href="/1105/src/update.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">수정</a>
-			<!-- <a class="button_a" href="/1105/src/list.php/?page=<?php echo $page; ?>">취소</a> -->
-			<a class="button_a" href="/1105/src/delete.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">삭제</a>
-		</section>
-	</main>
+    <?php
+        require_once(FILE_HEADER);
+    ?>
+    <main>
+        <table>
+			<div class="detail_head_area">
+				<tr>
+					<td class="detail_head"><?php echo $item["id"]; ?></td>
+					<td class="detail_head"><?php echo $item["title"]; ?></td>              
+					<td class="detail_head detail_at"><?php echo $item["create_at"]." / ".$item["update_at"]; ?></td>
+				</tr>
+			</div>
+            <tr>
+                <td class="detail_cell">
+                    <?php echo $item["content"]?>
+                </td>
+            </tr>
+        </table>
+        <section>
+            <a class="com_a" href="/1105/src/update.php?id=<?php echo $id; ?>&page=<?php echo $page; ?>">수정</a>
+            <a class="com_a" href="/1105/src/delete.php?id=<?php echo $id; ?>&page=<?php echo $page; ?>">삭제</a>
+            <a class="com_a" href="/1105/src/list.php">취소</a>
+        </section>
+    </main>
 </body>
 </html>

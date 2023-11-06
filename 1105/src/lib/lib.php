@@ -9,7 +9,7 @@ function my_db_conn( &$conn ) {
 	$db_host	= "localhost"; // host
 	$db_user	= "root"; // user id
 	$db_pw		= "php504"; // password
-	$db_name	= "mini_board"; // DB name
+	$db_name	= "mini_boardd"; // DB name
 	$db_charset	= "utf8mb4"; // charset
 	$db_dns		= "mysql:host=".$db_host.";dbname=".$db_name.";charset=".$db_charset;
 
@@ -151,6 +151,7 @@ function db_select_boards_id(&$conn, &$arr_param) {
 		."		,title "
 		."		,content "
 		."		,create_at "
+		."		,update_at "
 		." FROM "
 		."		boards "
 		." WHERE "
@@ -220,7 +221,7 @@ function db_update_boards_id(&$conn, &$arr_param) {
 		." SET "
 		." 		title = :title "
 		."		,content = :content "
-		// ."		,create_at = NOW() "
+		."		,update_at = NOW() "
 		." WHERE "
 		."		id = :id "
 		;

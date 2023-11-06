@@ -40,15 +40,16 @@ try {
 		if($page === "") {
 			$arr_err_msg[] = sprintf(ERROR_MSG_PARAM, "page");
 		}
-		if(count($arr_err_msg) >= 1) {
-			throw new Exception(implode("<br>", $arr_err_msg));
-		}
 		if($title === "") {
 			$arr_err_msg[] = sprintf(ERROR_MSG_PARAM, "title");
 		}
 		if($content === "") {
 			$arr_err_msg[] = sprintf(ERROR_MSG_PARAM, "content");
 		}
+		if(count($arr_err_msg) >= 1) {
+			throw new Exception(implode("<br>", $arr_err_msg));
+		}
+		
 
         // 에러 없을 경우
 		if(count($arr_err_msg) === 0) {
@@ -99,51 +100,47 @@ try {
 ?>
 
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="/1105/src/css/common.css">
-	<title>수정 페이지</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/1105/src/css/common.css">
+    <title>수정페이지</title>
 </head>
 <body>
-	<?php
+    <?php
 		require_once(FILE_HEADER);
 	?>
-	<main class="container">
-		<?php
+    <main>
+        <?php
 			foreach($arr_err_msg as $val) {
 		?>
 				<p><?php echo $val ?></p>
 		<?php
 			}
 		?>
-		<form action="/1105/src/update.php" method="post">
-			<table class="table-striped">
-				<input type="hidden" name="id" value="<?php echo $id; ?>">
-				<input type="hidden" name="page" value="<?php echo $page; ?>">
-				<tr>
-					<th class="radius-left">글 번호</th>
-					<td class="radius-right"><?php echo $item["id"]; ?></td>
+        <form action="/1105/src/update.php" method="post">
+            <table>
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
+				<input type="hidden" name="page" value="<?php echo $page; ?>">				
+                <tr>
+					<td class="detail_head"><?php echo $item["id"]; ?></td>
+					<td class="detail_head">
+						<input class="input_txt" type="text" name="title" id="title" value="<?php echo $item["title"]; ?>">
+					</td>              
+					<td class="detail_head detail_at"><?php echo $item["create_at"]; ?></td>
 				</tr>
-				<tr>
-					<th class="radius-left">제목</th>
-					<td class="radius-right"><input type="text" name="title" value="<?php echo $item["title"]; ?>"></td>
-				</tr>
-				<tr>
-					<th class="radius-left">작성일자</th>
-					<td class="radius-right"><input type="text" name="title" value="<?php echo $item["create_at"]; ?>"></td>
-				</tr>
-				<tr>
-					<!-- <th class="radius-left">내용</th> -->
-					<td class="radius-right"><textarea name="content" id="content" cols="30" rows="10"><?php echo $item["content"]; ?></textarea></td>
-				</tr>
-			</table>
-			<section class="button">
-				<button class="button_a" type="submit">저장</button>
-				<a class="button_a" href="/1105/src/detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>
-			</section>
-		</form>
-	</main>
+                <tr>
+                    <td>
+                        <textarea class="detail_cell" name="content" id="content"><?php echo $item["content"]?></textarea> 
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <button class="com_b" type="submit">저장</button>
+                <a class="com_a" href="/1105/src/detail.php?id=<?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>  
+            </div>
+        </form>
+    </main>
 </body>
 </html>

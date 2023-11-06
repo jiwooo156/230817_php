@@ -52,8 +52,8 @@ try {
 		// 게시글 조회 에러
 		var_dump($result);
 		throw new Exception("DB Error : Select boards Paging");
-}
- } catch(Exception $e) {
+	}
+} catch(Exception $e) {
     header("Location: /1105/src/list.php");
     exit;
 } finally {
