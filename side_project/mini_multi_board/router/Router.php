@@ -27,6 +27,7 @@ class Router {
                 // 해당 컨트롤러 호출
                 new UserController("loginGet");
             } else {
+                // method = POST일 때
                 // 해당 컨트롤러 호출
                 new UserController("loginPost");
             }
@@ -42,6 +43,12 @@ class Router {
         } else if($url === "board/list") {
             if($method === "GET") {
                 new BoardController("listGet");
+            }
+        } else if($url === "board/add") {
+            if($method === "GET") {
+                // 처리 없음
+            } else {
+                new BoardController("addPost");
             }
         }
 

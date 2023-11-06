@@ -14,7 +14,9 @@ class UserController extends ParentsController {
     protected function loginPost() {
         // ID, PW 설정(DB에서 사용할 데이터 가공)
         $arrInput = [];
+        // id 받아옴
         $arrInput["u_id"] = $_POST["u_id"];
+        // 받아온 pw를 암호화해줌
         $arrInput["u_pw"] = $this->encryptionPassword($_POST["u_pw"]);
 
         $modelUser = new UserModel();
@@ -28,8 +30,9 @@ class UserController extends ParentsController {
         }
 
         // 세션에 u_id 저장
-        $_SESSION["u_id"] = $resultUserInfo[0]["u_id"];
-        return "Location: /board/list";
+        $_SESSION["u_pk"] = $resultUserInfo[0]["id"];
+        // 무조건 b_type을 보냄
+        return "Location: /board/list?b_type=0";
     }
 
     // 로그아웃 처리

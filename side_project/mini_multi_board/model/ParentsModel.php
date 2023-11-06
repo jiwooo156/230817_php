@@ -30,11 +30,11 @@ class ParentsModel {
         $this->conn = null;
     }
 
-    // beginTransection
-    public function beginTransection() {
-        // 게터세터와 비슷한 역할?
-        $this->conn->begintransection();
+   // beginTransaction
+   public function beginTransaction(){
+    $this->conn->beginTransaction();
     }
+    
 
     // commit
     public function commit() {
