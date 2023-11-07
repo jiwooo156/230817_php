@@ -37,9 +37,11 @@ class Router {
                 new UserController("logoutGet");
             }
         } else if($url === "user/regist") {
-            // 회원가입
+            // 회원가입 페이지
             if($method === "GET") {
                 new UserController("registGet");
+            } else {
+                new UserController("registPost");
             }
         } else if($url === "board/list") {
             // 게시판 읽기
@@ -52,6 +54,10 @@ class Router {
                 // 처리 없음
             } else {
                 new BoardController("addPost");
+            }
+        } else if($url === "board/detail") {
+            if($method === "GET") {
+                new BoardController("detailGet");
             }
         }
 
