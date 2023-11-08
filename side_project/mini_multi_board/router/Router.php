@@ -24,6 +24,7 @@ class Router {
 
         if($url === "user/login") {
             if($method === "GET") {
+                
                 // 해당 컨트롤러 호출
                 new UserController("loginGet");
             } else {
@@ -42,6 +43,12 @@ class Router {
                 new UserController("registGet");
             } else {
                 new UserController("registPost");
+            }
+        } else if($url === "user/idchk") {
+            if($method === "GET") {
+                new UserController("idChkGet");
+            } else {
+                new UserController("idChkPost");
             }
         } else if($url === "board/list") {
             // 게시판 읽기

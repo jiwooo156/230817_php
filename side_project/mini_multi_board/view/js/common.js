@@ -55,3 +55,34 @@ function closeDetailModal() {
     MODAL.classList.remove('show');
     MODAL.style = 'display: none;';
 }
+
+// 아이디 체크 함수
+function idChk() {
+    const U_ID = document.querySelector("#u_id").value; // input에 입력된 id 불러옴
+    // const URL = '/user/regist?u_id='+u_id;
+    const URL = '/user/idchk';   // 서버에 접속할 url (login, regist가 아니니까 새로 만들어줌. url 소문자여야함)
+    const ID_CHK_MSG = document.getElementById('idChkMsg');
+    ID_CHK_MSG.innerHTML = ""; // 초기화 (기존에 존재 할 수도 있는 메세지 비우기)
+
+    const formData = new FormData();
+    formData.append("u_id", U_ID);  // 유저가 입력한 아이디 폼에 셋팅
+
+    const HEADER = {
+        method: "POST"
+        ,body: formData
+    };
+
+    fetch(URL, HEADER)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        if(data.errflg === "0") {
+            ID_CHK_MSG.innerHTML = "사용 가능한 아이디입니다."
+            ID_CHK_MSG.style.classList = 'text-success';
+        } else {
+            ID_CHK_MSG.innerHTML = "사용할 수 없는 아이디입니다."   // 중복, validation 모두 거쳤기때문에 "중복된" 말고 "사용불가"로 나타냄
+            ID_CHK_MSG.style.classList = 'text-danger';
+        }
+    })
+    .catch(error => console.log(error));
+}

@@ -18,10 +18,16 @@
           <label for="u_id" class="form-label">아이디</label>
           <input type="text" class="form-control" id="u_id" name="u_id" minlength="8" maxlength="20">
           <!-- 아이디가 이메일형식이면 type=email, 그냥 아이디형식이면 type=text로 해줌 -->
+          <button type="button" id="id-chk" class="btn btn-secondary" onclick="idChk(); return false;">아이디 확인</button>
+          <span id="idChkMsg"></span>
         </div>
         <div class="mb-3">
           <label for="u_pw" class="form-label">비밀번호</label>
           <input type="password" class="form-control" id="u_pw" name="u_pw" minlength="8" maxlength="20">
+        </div>
+        <div class="mb-3">
+          <label for="u_pw_chk" class="form-label">비밀번호 확인</label>
+          <input type="password" class="form-control" id="u_pw_chk" name="u_pw_chk" minlength="8" maxlength="20">
         </div>
         <div class="mb-3">
           <label for="u_name" class="form-label">이름</label>
@@ -31,3 +37,7 @@
         <button type="submit" class="btn btn-dark float-end">가입</button>
       </form> 
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="/view/js/common.js"></script>
+</body>
+</html>
