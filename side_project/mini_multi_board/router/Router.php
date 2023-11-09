@@ -54,7 +54,7 @@ class Router {
             // 게시판 읽기
             if($method === "GET") {
                 new BoardController("listGet");
-            }
+            } 
         } else if($url === "board/add") {
             // 게시판에 글 작성
             if($method === "GET") {
@@ -66,6 +66,10 @@ class Router {
             if($method === "GET") {
                 new BoardController("detailGet");
             }
+        } else if($url === "board/delete") {
+            if($method === "GET") {
+                new BoardController("boardDeleteGet");
+            }    
         }
 
         // 없는 경로일 경우

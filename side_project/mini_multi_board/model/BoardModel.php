@@ -104,5 +104,35 @@ class BoardModel extends ParentsModel {
             exit();
         }
     }
+
+
+    // 게시글 삭제 쿼리문
+    public function boardDelete($arrBoardDeleteInfo) {
+        $sql = 
+            " UPDATE  "
+            ."     board "
+            ." SET "
+            ."    delete_at = NOW() "
+            ." WHERE "
+            ."     id = :id "
+            ." AND "
+            ."     u_pk = :u_pk "
+            ;
+
+        $prepare = [
+            ":id" => $arrBoardDeleteInfo["id"]
+            ,":u_pk" => $arrBoardDeleteInfo["u_pk"]
+        ];
+
+        try {
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute($prepare);
+            $result = $stmt->rowCount(); // 쿼리에 영향을 받은 레코드 수를 반환
+            return $result;
+        } catch(Exception $e) {
+            echo "BoardModel->getBoardDelete Error : ".$e->getMessage();
+            exit();
+        }
+    }
 }
 

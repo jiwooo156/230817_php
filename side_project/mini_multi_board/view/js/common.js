@@ -28,13 +28,22 @@ function openDetail(id) {
         const IMG = document.querySelector("#b_img");
         const CREATE = document.querySelector("#create_at");
         const UPDATE = document.querySelector("#update_at");
+        const DELETE = document.querySelector("#d-input");
+        const DEL_BTN = document.querySelector("#b-del");
 
         TITLE.innerHTML = data.data.b_title;
         CREATE.innerHTML = "작성일자: "+data.data.create_at;
         UPDATE.innerHTML = "수정일자: "+data.data.update_at;
         CONTENT.innerHTML = data.data.b_content;
         IMG.setAttribute('src', data.data.b_img);
+        DELETE.value = data.data.id;
 
+        // 삭제 버튼 표시 처리
+        if(data.data.uflg === "1") {
+            DEL_BTN.classList.remove('d-none');
+        } else {
+            DEL_BTN.classList.add('d-none');
+        }
 
         // 모달 오픈
         openModal();
@@ -68,7 +77,7 @@ function idChk() {
     formData.append("u_id", U_ID);  // 유저가 입력한 아이디 폼에 셋팅
 
     const HEADER = {
-        method: "POST"
+        method: "POST" 
         ,body: formData
     };
 

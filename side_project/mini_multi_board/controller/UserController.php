@@ -14,15 +14,13 @@ class UserController extends ParentsController {
 
     // 로그인 처리
     protected function loginPost() {
-        $InputData = [
+        $inputData = [
             "u_id" => $_POST["u_id"]
             ,"u_pw" => $_POST["u_pw"]
         ];
 
         // 유효성 체크
-        if(!Validation::userChk(
-            
-        )) {
+        if(!Validation::userChk($inputData)){
             // $this->arrErrorMsg : 부모컨트롤러에 선언되어있음. 
             $this->arrErrorMsg = Validation::getArrErrorMsg();
             return "view/login.php";
@@ -46,7 +44,7 @@ class UserController extends ParentsController {
             return "view/login.php";
         }
 
-        // 세션에 u_id 저장
+        // 세션에 id 저장
         $_SESSION["u_pk"] = $resultUserInfo[0]["id"];
         // 무조건 b_type을 보냄
         return "Location: /board/list?b_type=0";

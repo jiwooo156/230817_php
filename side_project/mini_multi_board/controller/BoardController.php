@@ -48,7 +48,7 @@ class BoardController extends ParentsController {
         $b_content = $_POST["b_content"];
         $u_pk = $_SESSION["u_pk"];
         // b_img배열에서 name의 값을 가져옴
-        $b_img = $_FILES["b_img"]["name"];
+        $b_img = $_FILES["b_img"]["name"] === "" ? null : $_FILES["b_img"]["name"];
 
         $arrAddBoardInfo = [
             "b_type" => $b_type
@@ -85,20 +85,24 @@ class BoardController extends ParentsController {
         $arrBoardDetailInfo = [
             "id" => $id
         ];
-
+        
         // model 호출
         $boardModel = new BoardModel();
         $result = $boardModel->getBoardDetail($arrBoardDetailInfo);
-
+    
         // 이미지 패스 재설정
         $result[0]["b_img"] = "/"._PATH_USERIMG.$result[0]["b_img"];
 
+        // 작성 유저 플래그 설정
+        $result[0]["uflg"] = $result[0]["u_pk"] === $_SESSION["u_pk"] ? "1" : "0";
+       
         // response 데이터 작성
         $arrTmp = [
             "errflg" => "0"
             ,"msg" => ""
             ,"data" => $result[0]
         ];
+       
         // 배열을 json 형태(문자열 데이터)로 바꾸기
         $response = json_encode($arrTmp);
 
@@ -108,4 +112,33 @@ class BoardController extends ParentsController {
         echo $response;
         exit();
     }
+
+    // 게시글 삭제
+    protected function boardDeleteGet() {
+        // 게시글 pk
+        $id = $_GET["id"];
+
+        $arrBoardDeleteInfo = [
+            "id" => $id
+            ,"u_pk" => $_SESSION["u_pk"]
+        ];
+
+        // model 호출
+        $boardModel = new BoardModel();
+        $boardModel->beginTransaction();
+        $result = $boardModel->boardDelete($arrBoardDeleteInfo);
+
+            // 삭제 실패
+        if($result !== 1) {
+            $boardModel->rollback();
+        } else {
+            // 삭제 성공
+            $boardModel->commit();
+        }   
+            // 파기
+        $boardModel->destroy();
+
+        return "Location: /board/list";
+    }
+
 }

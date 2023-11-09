@@ -23,7 +23,7 @@
         foreach($this->arrBoardInfo as $item) {
           // value를 $item에 담아줌
       ?>
-        <div class="card">
+        <div class="card" id="card<?php echo $item["id"]?>">
           <img src="<?php echo isset($item["b_img"]) ? "/"._PATH_USERIMG.$item["b_img"] : ""; ?>" class="card-img-top" alt="이미지 없음">
           <div class="card-body">
             <h5 class="card-title"><?php echo $item["b_title"] ?></h5>
@@ -52,7 +52,11 @@
             <img id="b_img" src="" alt="">
           </div>
           <div class="modal-footer">
-            <button type="button" onclick="closeDetailModal(); return false;" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+            <form action="/board/delete" method="get">
+              <input type="hidden" name="id" id="d-input">
+              <button type="submit" id="b-del" class="btn btn-secondary" data-bs-dismiss="modal">삭제</button>
+              <button type="button" onclick="closeDetailModal(); return false;" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+            </form>
           </div>
         </div>
       </div>
