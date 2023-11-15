@@ -18,6 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        // 수정 가능한 애들
         'name',
         'email',
         'password',
@@ -29,6 +30,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
+        // select할때 숨기는 애들
         'password',
         'remember_token',
     ];
@@ -39,6 +41,7 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
+        // 형 변환? 해줌
         'email_verified_at' => 'datetime',
     ];
 }
