@@ -19,20 +19,21 @@ class UserController extends Controller
         return view('login');
     }
     public function loginpost(Request $request) {
-        // 유효성 검사
-        $validator = Validator::make(
-            $request->only('email', 'password')
-            ,[
-                // email 유효성 체크
-                'email' => 'required|email|max:50'
-                ,'password' => 'required'
-            ]
-        );
+        // **************** del 231116 middleware로 이관 ****************
+        // // 유효성 검사
+        // $validator = Validator::make(
+        //     $request->only('email', 'password')
+        //     ,[
+        //         // email 유효성 체크
+        //         'email' => 'required|email|max:50'
+        //         ,'password' => 'required'
+        //     ]
+        // );
 
-        // 유효성 검사 실패시 처리
-        if($validator->fails()) {
-            return view('login')->withErrors($validator->errors());
-        } 
+        // // 유효성 검사 실패시 처리
+        // if($validator->fails()) {
+        //     return view('login')->withErrors($validator->errors());
+        // } 
 
         // 유저 정보 습득(조회)
         $result = User::where('email', $request->email)->first();

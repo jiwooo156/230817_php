@@ -21,9 +21,9 @@ Route::get('/', function () {
 
 // 유저 관련
 Route::get('/user/login', [UserController::class, 'loginget'])->name('user.login.get');  // 로그인 화면 이동
-Route::post('/user/login',[UserController::class, 'loginpost'])->name('user.login.post'); // 로그인 처리
+Route::middleware('my.user.validation')->post('/user/login',[UserController::class, 'loginpost'])->name('user.login.post'); // 로그인 처리 (미들웨어 실행 -> 라우트 실행됨)
 Route::get('/user/registration', [UserController::class, 'registrationget'])->name('user.registration.get');  // 회원가입 화면 이동
-Route::post('/user/registration', [UserController::class, 'registrationpost'])->name('user.registration.post'); // 회원가입 처리
+Route::middleware('my.user.validation')->post('/user/registration', [UserController::class, 'registrationpost'])->name('user.registration.post'); // 회원가입 처리 (미들웨어 실행 -> 라우트 실행됨)
 Route::get('/user/logout', [UserController::class, 'logoutget'])->name('user.logout.get'); // 로그아웃 처리
 
 //   GET|HEAD        user ........................................... user.index › UserController@index 로그인 화면이동
@@ -35,7 +35,8 @@ Route::get('/user/logout', [UserController::class, 'logoutget'])->name('user.log
 
 
 // 보드 관련
-Route::resource('/board', BoardController::class); 
+Route::middleware('auth')->resource('/board', BoardController::class); 
+// 로그인 관련 자동 체크한 뒤 컨트롤로 넘어감
 
 //   POST            board ....................................... board.store › BoardController@store  
 //   GET|HEAD        board/create .............................. board.create › BoardController@create  
