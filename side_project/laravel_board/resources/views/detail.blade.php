@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('title', 'List')
+@section('title', 'detail')
 
 @section('main')
 	<main>
@@ -14,7 +14,9 @@
 		<form action="{{route('board.destroy', ['board' => $data->b_id])}}" method="post">
 			@csrf
 			@method('DELETE')
-			<button type="submit">삭제</button>
+			<button class="btn btn-dark" type="submit">삭제</button>
 		</form>
+		<a class="btn btn-dark" href="{{route('board.edit', ['board' => $data->b_id])}}">수정</a>
+		<a class="btn btn-dark" href="{{route('board.index')}}">나가기</a>
 	</main>
 @endsection
