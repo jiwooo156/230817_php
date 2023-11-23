@@ -1,6 +1,7 @@
 <?php
 require_once('Picachu.php');
 require_once('Kkobugi.php');
+require_once('./Poketmon.php');
 
 // namespace에서 지정된 애를 기준으로 찾아감
 // use에서 한번 불러왔으면 인스턴스할때 경로 안써줘도됨
@@ -9,7 +10,7 @@ use test\Kkobugi as kk;
 
 // 클래스를 호출하면 기본적으로 클래스내의 construct를 호출함
 $obj = new pi();
-$obj_kk = new kk();
+$obj_kk = new kk('꼬북꼬북', '꼬부기', '물');
 
 // howling의 접근 제어 지시자가 public이어서 접근 가능함. 
 // echo $obj->howling;
@@ -26,10 +27,10 @@ $obj_kk = new kk();
 // $obj->getterName();
 
 // 인스턴스화 없어도 static은 접근가능함.
-// pi::백만볼트();
+pi::백만볼트();
 
 // static아닌 일반메소드는 접근안됨. (인스턴스화 안함, 클래스명::메소드 형식으로 접근할 수 없음)
 // pi::getterName();
 // $obj->getterName();
 
-// $obj_kk->몸통박치기();
+$obj_kk->물대포();
