@@ -1,5 +1,5 @@
 import { createStore } from "vuex";
-import axios from 'axios';
+import axios from 'axios';		//  axios : 비동기 통신 라이브러리
 
 const store = createStore({
 	// state() : data를 저장하는 영역
@@ -10,6 +10,7 @@ const store = createStore({
 			imgURL: '',		// 작성 탭 표시용 이미지 URL 저장용
 			postFileData: null,	// 글 작성용 파일데이터 저장용
 			lastBoardId: 0,		// 가장 마지막 로드 된 게시글 번호 저장용
+			flgBtnMoreView: true,	// 더보기 버튼 활성여부 플래그
 		}
 	},
 	// mutations : 데이터 수정용 함수 저장 영역
@@ -33,14 +34,21 @@ const store = createStore({
 		setPostFileData(state, file) {
 			state.postFileData = file;
 		},
-		// 작성된 글 삽입용
+		// 작성된 글 삽입용 (unshift : 제일 위에 글 추가)
 		setUnshiftBoard(state, data) {
 			state.boardData.unshift(data);
 		},
-		// 작성된 글 삽입용
+		// 더보기 데이터 추가 (push : 제일 아래에 글 추가)
 		setPushBoard(state, data) {
-			state.boardData.push(data);
-			state.lastBoardId = data.id;
+			state.boardData.push(data);		
+		},
+		// 마지막 게시글 id 셋팅용
+		setLastBoardId(state, num) {
+			state.lastBoardId = num;
+		},
+		// 더보기 버튼 활성화
+		setflgBtnMoreView(state, boo) {
+			state.flgBtnMoreView = boo;
 		},
 		// 작성 후 초기화 처리
 		setClearAddData(state) {
@@ -97,9 +105,9 @@ const store = createStore({
 				console.log(err);
 			});
 		},
-		// 마지막 게시글
-		actionGetPlusLoad(context) {
-			const url = 'http://112.222.157.156:6006/api/boards/'+context.state.lastBoardId;
+		// 마지막 게시글 불러오는 처리
+		actionGetBoardItem(context) {
+			const url = 'http://112.222.157.156:6006/api/boards/'+context.state.lastBoardId;	//마지막 게시글id 파라미터 추가
 			const header = {
 				headers: {
 					'Authorization': 'Bearer meerkat',
@@ -110,12 +118,14 @@ const store = createStore({
 				// 화면에 출력해줌
 				if(res.data) {
 					context.commit('setPushBoard', res.data);
+					context.commit('setLastBoardId', res.data.id);
 				} else {
-					context.state.lastBoardId = 0;
+					// context.state.lastBoardId = 0;
+					context.commit('setflgBtnMoreView', false);
 				}				
 			})
 			.catch(err => {
-				console.log(err);
+				console.log(err.response.data);
 			});
 		},		
 	}

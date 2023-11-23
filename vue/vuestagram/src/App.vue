@@ -18,7 +18,7 @@
   <!-- 더보기 버튼 -->
   <button 
     v-if="$store.state.lastBoardId > 1"
-    @click="plusLoad">더보기</button>
+    @click="$store.dispatch('actionGetBoardItem')">더보기</button>
   
   <!-- 푸터 -->
   <div class="footer">
@@ -60,10 +60,6 @@ export default {
     addBoard() {
       // dispatch : actions를 호출하는 함수
       this.$store.dispatch('actionPostBoardAdd')
-    },
-    // 더보기 버튼 처리
-    plusLoad() {
-      this.$store.dispatch('actionGetPlusLoad');
     },
 
   },
