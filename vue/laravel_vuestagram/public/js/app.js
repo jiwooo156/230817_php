@@ -19712,12 +19712,17 @@ var store = (0,vuex__WEBPACK_IMPORTED_MODULE_1__.createStore)({
           'Content-Type': 'multipart/form-data'
         }
       };
-      var data = {
-        name: '정지우',
-        img: context.state.postFileData,
-        content: document.getElementById('content').value
-      };
-      axios__WEBPACK_IMPORTED_MODULE_0___default().post(url, data, header).then(function (res) {
+      // const data = {
+      // 	name: '정지우',
+      // 	img: context.state.postFileData,
+      // 	content: document.getElementById('content').value,
+      // };		
+      var formData = new FormData();
+      // formData.append(name, value)
+      formData.append('name', '정지우');
+      formData.append('img', context.state.postFileData);
+      formData.append('content', document.getElementById('content').value);
+      axios__WEBPACK_IMPORTED_MODULE_0___default().post(url, formData, header).then(function (res) {
         // 작성글 데이터 저장
         context.commit('setUnshiftBoard', res.data);
         // 리스트 UI로 전환

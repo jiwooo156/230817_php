@@ -13,33 +13,52 @@
 	text-decoration: none;
 }
 
-img {
-	width: 50px;
-	height: 50px;
-}
-
 body {
-	
+	width: 100%;
+    min-width: 1572px;
+    height: 100%;
 }
 
-.header_logo {
-	flex-direction: row;
-	background-color: aqua;
+.main_view_header {
+	width: 60%;
 }
 
 .header_inner {
-	flex-direction: row;
-	list-style: none;
-	text-decoration: none;
+	display: flex;
+	justify-content: space-between;
+}
+
+.header_logo {
+	background-color: aqua;
+	width: 100px;
+	height: 50px;
+}
+
+.header-logo-img {
+	width: 100px;
+	height: 100px;
+}
+
+.header_nav {
+	width: 60%;
+	height: 50px;
 	background-color: aquamarine;
 }
 
-.header-search {
+.header_nav_inner {
+	display: inline;
 	flex-direction: row;
+	float: left;
+	justify-content: flex-start;
+	list-style: none;
+	text-decoration: none;
+}
+
+.header-search {
 	background-color: bisque;
 }
 
 .header-quick {
-	flex-direction: row;
 	background-color: gray;
+	width: 300px;
 }

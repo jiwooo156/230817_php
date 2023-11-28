@@ -86,13 +86,18 @@ const store = createStore({
 					'Content-Type': 'multipart/form-data', 
 				}
 			};
-			const data = {
-				name: '정지우',
-				img: context.state.postFileData,
-				content: document.getElementById('content').value,
-			};
+			// const data = {
+			// 	name: '정지우',
+			// 	img: context.state.postFileData,
+			// 	content: document.getElementById('content').value,
+			// };		
+			const formData = new FormData();
+			// formData.append(name, value)
+			formData.append('name', '정지우');
+			formData.append('img', context.state.postFileData);
+			formData.append('content', document.getElementById('content').value);
 
-			axios.post(url, data, header)
+			axios.post(url, formData, header)
 			.then(res => {
 				// 작성글 데이터 저장
 				context.commit('setUnshiftBoard', res.data);

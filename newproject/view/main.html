@@ -11,21 +11,77 @@
 	<div class="main_view">
 		<!-- 헤더 -->
 		<div class="main_view_header">
-			<!-- 로고영역 : 메인페이지로 이동 -->
-			<div class="header_logo">
-				<h1>
-					<a href="https://www.hago.kr/templates/mainpage" data-href="{ '_type': 'link' }">
-						<img src="https://image.hago.kr/dev/main/pc/pc_main_logo.svg" alt="logo">
-						<img class="logo-sticky" src="https://image.hago.kr/dev/main/pc/pc_sub_logo.svg" alt="logo">
-					</a>
-				</h1>
-			<!-- //로고 -->
+			<!-- 헤더 첫번째 영역 -->
+			<div class="header_inner">
+				<!-- 로고영역 : 메인페이지로 이동 -->
+				<div class="header_logo">
+					<h1>
+						<a href="https://www.hago.kr/templates/mainpage" data-href="{ '_type': 'link' }">
+							<img class="header-logo-img" src="https://image.hago.kr/dev/main/pc/pc_main_logo.svg" alt="logo">
+							<!-- <img class="logo-sticky" src="https://image.hago.kr/dev/main/pc/pc_sub_logo.svg" alt="logo"> -->
+						</a>
+					</h1>
+				<!-- //로고 -->
+				</div>
+				<!-- 검색바 -->
+				<div class="header_search" tabindex="0" style="cursor:auto;">
+					<div class="header_search_form">
+						<form>
+							<div class="form_text" __text-on>
+								<!-- 지우는 버튼 -->
+								<button type="button" class="btn_text_clear">
+									<!-- 아이콘(지우기버튼) -->
+									<i class="form_clear">
+										<!-- ::before -->
+									</i>
+									<b class="ir_blind">지우기</b>
+								</button>
+								<label for="">
+									<input type="text" id="search_word" autocomplete="off">
+									<span class="ir_blind text_placeholder">검색어를 입력하세요</span>
+								</label>
+								<!--  -->
+								<button type="button" class="btn_search">
+									<img src="https://image.hago.kr/dev/main/pc/pc_search.svg" alt="search">
+									<b class="ir_blind">검색하기</b>
+								</button>
+							</div>
+						</form>
+					</div>
+				<!-- //검색바 -->
+				</div>
+				<!-- 로그인,마이페이지,장바구니 -->
+				<div class="header-quick renewal">
+					<ul>
+						<li class="renewal-login">
+							<a href="https://www.hago.kr/login?redirect_to_after=https%3A%2F%2Fwww.hago.kr">
+								<img src="https://image.hago.kr/dev/main/pc/login.svg" alt="">
+								<b>로그인</b>
+							</a>
+						</li>
+						<li class="renewal-mypage">
+							<a href="https://www.hago.kr/mypage">
+								<img src="https://image.hago.kr/dev/main/pc/mypage.svg" alt="">
+								<b>마이페이지</b>
+							</a>
+						</li>
+						<li class="renewal-cart">
+							<a href="https://www.hago.kr/cart">
+								<img src="https://image.hago.kr/dev/main/pc/cart.svg" alt="">
+								<b>장바구니</b>
+							</a>
+						</li>
+					</ul>
+				<!-- //로그인 -->
+				</div>
+			<!-- //헤더 첫번째영역 -->
 			</div>
-			<!-- nav영역 -->
-			<div class="header_inner_nav">
-				<div class="header_inner">
+			<!-- 헤더 두번째영역 -->
+			<div>
+				<!-- nav영역 -->
+				<div class="header_nav">
 					<nav>
-						<div>
+						<div class="header_nav_inner">
 							<ul>
 								<li>
 									<a href="https://www.hago.kr/templates/mainpage">
@@ -45,58 +101,9 @@
 							</ul>
 						</div>
 					</nav>
-			<!-- //nav -->
-			</div>
-			<!-- 검색바 -->
-			<div class="header-search" tabindex="0" style="cursor:auto;">
-				<div class="header-search-form">
-					<form>
-						<div class="form-text" __text-on>
-							<!-- 지우는 버튼 -->
-							<button type="button" class="btn_text-clear">
-								<!-- 아이콘(지우기버튼) -->
-								<i class="form-clear">
-									<!-- ::before -->
-								</i>
-								<b class="ir-blind">지우기</b>
-							</button>
-							<label for="">
-								<input type="text" id="search_word" autocomplete="off">
-								<span class="ir-blind text_placeholder">검색어를 입력하세요</span>
-							</label>
-							<!--  -->
-							<button type="button" class="btn_search">
-								<img src="https://image.hago.kr/dev/main/pc/pc_search.svg" alt="search">
-								<b class="ir-blind">검색하기</b>
-							</button>
-						</div>
-					</form>
+				<!-- //nav -->
 				</div>
-			<!-- //검색바 -->
-			</div>
-			<!-- 로그인,마이페이지,장바구니 -->
-			<div class="header-quick renewal">
-				<ul>
-					<li class="renewal-login">
-						<a href="https://www.hago.kr/login?redirect_to_after=https%3A%2F%2Fwww.hago.kr">
-							<img src="https://image.hago.kr/dev/main/pc/login.svg" alt="">
-							<b>로그인</b>
-						</a>
-					</li>
-					<li class="renewal-mypage">
-						<a href="https://www.hago.kr/mypage">
-							<img src="https://image.hago.kr/dev/main/pc/mypage.svg" alt="">
-							<b>마이페이지</b>
-						</a>
-					</li>
-					<li class="renewal-cart">
-						<a href="https://www.hago.kr/cart">
-							<img src="https://image.hago.kr/dev/main/pc/cart.svg" alt="">
-							<b>장바구니</b>
-						</a>
-					</li>
-				</ul>
-			<!-- //로그인 -->
+			<!-- //헤더 두번째영역 -->
 			</div>
 		<!-- //헤더 -->
 		</div>
