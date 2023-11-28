@@ -18,24 +18,28 @@ img {
 	height: 50px;
 }
 
+body {
+	
+}
+
 .header_logo {
-	display: flex;
+	flex-direction: row;
 	background-color: aqua;
 }
 
 .header_inner {
-	display: flex;
+	flex-direction: row;
 	list-style: none;
 	text-decoration: none;
 	background-color: aquamarine;
 }
 
 .header-search {
-	display: flex;
+	flex-direction: row;
 	background-color: bisque;
 }
 
 .header-quick {
-	display: flex;
+	flex-direction: row;
 	background-color: gray;
 }

@@ -3,7 +3,7 @@
   <div class="header">
     <ul>
       <li v-if="$store.state.flgTapUI !== 0" @click="gotolist()" class="header-button header-button-left">취소</li>
-      <li><img class="logo" alt="Vue logo" src="./assets/logo.png"></li>
+      <li><img class="logo" alt="Vue logo" src="/css/logo.png"></li>
       <li 
         v-if="$store.state.flgTapUI === 1"
         @click="addBoard()"
@@ -30,10 +30,10 @@
 </template>
 
 <script>
-import ContainerComponent from './components/ContainerComponent.vue';
+import ContainerComponent from './ContainerComponent.vue';
 
 export default {
-  name: 'App',
+  name: 'AppComponent',
   created() {
     // store의 action 호출
     this.$store.dispatch('actionGetBoardList');
@@ -71,7 +71,7 @@ export default {
 
 <style>
 /* import앞에 @붙이는것 : css 문법 */
-@import url('./assets/css/common.css');
+@import url('/css/common.css');
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
