@@ -1,0 +1,27 @@
+
+form {
+    display: block;
+}
+
+.idst {
+	display: flex;
+	justify-content: space-between;
+}
+
+.u_login {
+    background-color: #14148C;
+	border: none;
+}
+
+.u_register {
+	display: inline-block;
+	text-align: center;
+    background-color: #B4B4DC;
+}
+
+.u_login, .u_register {
+    width: 150px;
+    height: 30px;
+    border-radius: 20px;
+	color: white;
+}
