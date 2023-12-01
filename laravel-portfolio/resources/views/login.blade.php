@@ -34,7 +34,7 @@
 					<span>회원가입</span>
 				</a>
 			</div>
-			<button type="submit" class="u_login">로그인</button>
+			<a href="/user/login" class="u_login">로그인</a>
 			<a href="#" class="u_register">회원가입</a>
 		</form>
 	</div>

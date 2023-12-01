@@ -30,8 +30,8 @@
 			<div class="header-quick">
 				<ul>
 					<li class="renewal-login">
-						<a href="#">
-							<img src="{{  }}" alt="login">
+						<a href="">
+							<img src="https://image.hago.kr/dev/main/pc/login.svg" alt="login">
 							<b>로그인</b>
 						</a>
 					</li>

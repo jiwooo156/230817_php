@@ -23,6 +23,9 @@
 						</li>
 					</ul>
 				</div> -->
+				<div>
+					<img src="/css/products.png">
+				</div>
 			</div>
 		<!-- //상품영역 -->
 		</div>
