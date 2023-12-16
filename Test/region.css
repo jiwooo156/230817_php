@@ -96,3 +96,14 @@
 .region_total_tour {
 	background-color: #FFC81E;
 }
+
+.region_btn_more button {
+	background-color: #FF92B1;
+	border: none;
+	color: white;
+	padding: 10px 50px;
+	display: inline-block;
+	text-align: center;
+	border-radius: 20px;
+	font-size: large;
+}

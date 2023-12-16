@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>region</title>
+</head>
+<body>
+	<div class="region_frame">
+		<div class="region_header_frame">헤더
+			<div class="region_slider_container">슬라이드
+				<div class="region_slider">
+					<div class="region_slide">item1</div>
+					<div class="region_slide">item2</div>
+					<div class="region_slide">item3</div>
+				</div>
+				<img class="region_slider_left" src="/img/prev.png" onclick="prevslide">
+				<img class="region_slider_right" src="/img/next.png" onclick="nextslide">
+			</div>
+			<div class="region_search_frame">검색
+				<form class="region_search_form" action="#">
+					<select id="region_select_list">
+						<option selected>지역</option>
+						<option value="">city1</option>
+						<option value="">city2</option>
+						<option value="">city3</option>
+					</select>
+					<input type="date" id="region_date">
+					-
+					<input type="date" id="region_date">
+					<input type="text" class="region_search_text" placeholder="키워드로 검색 해 보세요">
+					<button type="submit" class="region_form_btn">검색</button>
+				</form>
+			</div>
+		</div>
+		<div class="region_recommend_festival_frame">추천축제 frame
+			<div class="region_comment">
+				<p class="region_p1">이런 축제</p>
+				<p class="region_p2">추천드려요</p>
+			</div>
+			<div class="region_recommend_festival">축제게시글 list (여기에 grid)
+				<div class="region_recom_festiv">
+					<img src="./img/item_1.jpg">
+					<div class="region_recom_festiv_title">추천축제제목</div>
+					<div class="region_recom_festiv_period">추천축제기간</div>
+				</div>
+				<div class="region_recom_festiv">
+					<img src="./img/item_1.jpg">
+					<div class="region_recom_festiv_title">추천축제제목</div>
+					<div class="region_recom_festiv_period">추천축제기간</div>
+				</div>
+				<div class="region_recom_festiv">
+					<img src="./img/item_1.jpg">
+					<div class="region_recom_festiv_title">추천축제제목</div>
+					<div class="region_recom_festiv_period">추천축제기간</div>
+				</div>
+				<div class="region_recom_festiv">
+					<img src="./img/item_1.jpg">
+					<div class="region_recom_festiv_title">추천축제제목</div>
+					<div class="region_recom_festiv_period">추천축제기간</div>
+				</div>
+				<div class="region_recom_festiv">
+					<img src="./img/item_1.jpg">
+					<div class="region_recom_festiv_title">추천축제제목</div>
+					<div class="region_recom_festiv_period">추천축제기간</div>
+				</div>
+			</div>
+		</div>
+		<div class="region_recommend_tour_frame">추천관광지 frame
+			<div>
+				<p class="region_p1">이런 관광지</p>
+				<p class="region_p2">추천드려요</p>
+			</div>
+			<div class="region_recommend_tour">추천관광지게시글 list
+				<div class="region_recom_tour">
+					<img src="./img/item_2.jpg">
+					<div class="region_recom_tour_title">추천관광지제목</div>
+				</div>
+				<div class="region_recom_tour">
+					<img src="./img/item_2.jpg">
+					<div class="region_recom_tour_title">추천관광지제목</div>
+				</div>
+				<div class="region_recom_tour">
+					<img src="./img/item_2.jpg">
+					<div class="region_recom_tour_title">추천관광지제목</div>
+				</div>
+				<div class="region_recom_tour">
+					<img src="./img/item_2.jpg">
+					<div class="region_recom_tour_title">추천관광지제목</div>
+				</div>
+			</div>
+		</div>
+		<div class="region_total_festival_frame">지역축제 frame
+			
+			<div class="region_festival_list">지역축제 list (for문돌리기)
+				<img src="./img/item_3.jpg">
+				<div class="region_festival_title">지역축제제목</div>
+				<div class="region_festival_period">지역축제기간</div>
+				<button type="submit" class="region_heart">좋아요</button>
+			</div>
+			<div class="region_festival_list">
+				<img src="./img/item_3.jpg">
+				<div class="region_festival_title">지역축제제목</div>
+				<div class="region_festival_period">지역축제기간</div>
+				<button type="submit" class="region_heart">좋아요</button>
+			</div>
+			<div class="region_festival_list">
+				<img src="./img/item_3.jpg">
+				<div class="region_festival_title">지역축제제목</div>
+				<div class="region_festival_period">지역축제기간</div>
+				<button type="submit" class="region_heart">좋아요</button>
+			</div>
+			<div class="region_festival_list">
+				<img src="./img/item_3.jpg">
+				<div class="region_festival_title">지역축제제목</div>
+				<div class="region_festival_period">지역축제기간</div>
+				<button type="submit" class="region_heart">좋아요</button>
+			</div>
+		</div>
+		<div class="region_total_tour_frame">지역관광지 frame
+			<div class="region_tour_list">
+				<img src="./img/item_4.jpg">
+				<div class="region_tour_title">지역관광지제목</div>
+				<div class="region_tour_place">지역관광지위치</div>
+				<button type="submit" class="region_heart">좋아요</button>
+			</div>
+			<div class="region_tour_list">
+				<img src="./img/item_4.jpg">
+				<div class="region_tour_title">지역관광지제목</div>
+				<div class="region_tour_place">지역관광지위치</div>
+				<button type="submit" class="region_heart">좋아요</button>
+			</div>
+			<div class="region_tour_list">
+				<img src="./img/item_4.jpg">
+				<div class="region_tour_title">지역관광지제목</div>
+				<div class="region_tour_place">지역관광지위치</div>
+				<button type="submit" class="region_heart">좋아요</button>
+			</div>
+			<div class="region_tour_list">
+				<img src="./img/item_4.jpg">
+				<div class="region_tour_title">지역관광지제목</div>
+				<div class="region_tour_place">지역관광지위치</div>
+				<button type="submit" class="region_heart">좋아요</button>
+			</div>
+		</div>
+		<div class="region_more_btn">더보기
+			<button type="submit">더보기</button>
+		</div>
+	</div>
+</body>
+</html>
