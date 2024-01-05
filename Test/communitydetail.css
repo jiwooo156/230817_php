@@ -1,0 +1,125 @@
+/* detail */
+.detail_frame{
+	margin: 100px auto;
+    width: 95%;
+    max-width: 1000px;
+}
+.detail_container{
+	padding: 70px 10px 10px 10px;
+}
+.detail_header{
+    padding: 10px;
+    font-size: 2.3rem;
+    background: #d14c6c1f;
+}
+.detail_header_flex{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 0.9rem;
+}
+.detail_type{
+	font-size: 1.3rem;
+}
+.detail_tofrom{
+    padding: 0.5rem 0rem;
+}
+.detail_body{
+	padding: 20px;
+    border-top: 1px solid #7b7b7b;
+    border-bottom: 1px solid #7b7b7b;;
+}
+.detail_content{
+	margin-top: 20px;
+    word-break: break-all;
+}
+.detail_hits{
+	text-align: right;
+	padding-bottom: 0.5rem;
+	font-size: 0.85rem;
+}
+.detail_img{
+	text-align: center;
+}
+.detail_img img{
+    width: 100%;
+    max-width: 500px;
+}
+.detail_replie_container{
+    margin-top: 50px;
+}
+.detail_replie_write_box{
+	padding: 5px 10px;
+}
+.detail_replie_relative{
+	position: relative;
+	margin-top: 6px;
+}
+.detail_replie_relative textarea{
+    width: 100%;
+    padding: 10px;
+    font-family: 'Cafe24SsurroundAir';
+    border: 1px solid #6a6a6a;
+    font-size: 1rem;
+    font-weight: bold;
+	resize: none;
+}
+.detail_replie_relative textarea::placeholder{
+	color: #a9a9a9;
+}
+.detail_replie_length{
+	text-align: right;
+    font-size: 0.9rem;
+}
+.detail_replie_write_box_btn{
+	position: absolute;
+    font-size: 1.3rem;
+    top: 8px;
+    right: 6px;
+    background: none;
+    border: none;
+    color: #D14C6C;
+}
+.detail_replie_read{
+	padding: 10px;
+    border-bottom: 1px solid #0000002b;
+}
+.detail_replie_flex{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 6px;
+}
+.detail_replie_nick{
+    font-size: 1.08rem;
+	position: relative;
+}
+.detail_replie_nick span{
+	color: #878787;
+    font-size: 0.9rem;
+}
+.detail_replie_created_at{
+	min-width: 50px;
+	font-size: 0.75rem;
+    color: #6a6a6a;
+    line-height: 17px;
+}
+.detail_replie_content{
+    padding-top: 20px;
+    font-size: 1rem;
+}
+.detail_replie_change{
+	display: flex;
+	justify-content: flex-end;
+    padding-top: 5px;
+}
+.detail_replie_change div{
+	font-size: 0.85rem;
+    padding-left: 10px;
+    color: #d14c6c;
+}
+.detail_more_btn{
+	padding-top: 10px;
+}
+.detail_more_btn span{
+	font-size: 1rem;
+}

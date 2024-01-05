@@ -1,0 +1,231 @@
+/* 지역 페이지 */
+/* 지역 페이지 전체 */
+.region_frame { 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
+	margin: 150px 0 0;
+}
+/* 지역 슬라이드 */
+.region_slider_frame {
+	text-align: center;	
+	/* background-color: #7DF4B2; */
+	position: relative;
+}
+.region_slider_container {
+	overflow: hidden;
+}
+.region_slider {
+	display: flex;
+	/* background-color: #4BAF4B; */
+}
+.region_slide {
+	min-width: 100px;
+	box-sizing: border-box;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: #FF92B1;
+	text-align: center;
+	line-height: 100px;
+}
+.region_slider_left {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 0;
+	top: 40%;
+	cursor: pointer;
+}
+.region_slider_right {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	right: 0;
+	top: 40%;
+	cursor: pointer;
+}
+/* 지역 검색바 */
+.region_search {
+	width: 100vw;
+	text-align: center;
+	margin: 5% auto;
+	/* background-color: #8AB78A; */
+	/* 최신순,인기순 버튼에 */
+	position: relative;
+}
+.region_search_form {
+	/* background-color: #8572EE; */
+	line-height: 50px;
+}
+.region_select_list {
+	width: 150px;
+	height: 30px;
+	border-radius: 15px;
+	text-align: center;
+	font-size: large;
+}
+.region_date {
+	width: 150px;
+	height: 30px;
+	border-radius: 15px;
+	text-align: center;
+	font-size: large;
+}
+.region_category1 {
+	width: 60px;
+	height: 30px;
+	border: none;
+	background: none;
+	text-align: center;
+	font-size: large;
+	position: absolute;
+	right: 23vw;
+	top: 15vh;
+	cursor: pointer;
+}
+.region_category2 {
+	width: 60px;
+	height: 30px;
+	border: none;
+	background: none;
+	text-align: center;
+	font-size: large;
+	position: absolute;
+	right: 28vw;
+	top: 15vh;
+	cursor: pointer;
+}
+.region_text {
+	width: 450px;
+	height: 30px;
+	border-radius: 15px;
+	text-align: center;
+	/* line-height: 50px; */
+	font-size: large;
+}
+.region_form_btn {
+	background-color: #7DF4B2;
+	width: 60px;
+	height: 50px;
+	border-radius: 15px;
+	font-size: large;
+} 
+/* 지역 게시물 목록 전체 */
+.region_list_frame {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 100px;
+}
+/* 추천목록, 지역목록 전체  */
+.region_recommend, .region_total {
+	/* display: flex;
+	justify-content: center;
+	align-items: center; */
+	flex-direction: column;
+	gap: 100px;
+}
+.region_list_grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.region_recommend_festival {
+	/* background-color: #5CEEE6; */
+	position: relative;
+}
+.region_comment {
+	/* background-color: #808080; */
+	position: absolute;
+	display: inline-block;
+	left: 20px;
+	top: -50px;
+}
+.region_p1 {
+	font-size: small;
+}
+.region_p2 {
+	font-size: large;
+}
+.region_total {
+	position: relative;
+}
+.region_comment2 {
+	position: absolute;
+	left: 20px;
+	top: -50px;
+}
+.region_p3 {
+	font-size: large;
+}
+.region_p4 {
+	font-size: medium;
+}
+/* 지역 추천 게시물 separate */
+.region_list {
+	display: inline-block;
+	position: relative;
+	height: 400px;
+	/* background-color: #DCAD67; */
+}
+.region_img {
+	/* position: relative; */
+	/* width: 250px; */
+	height: 188px;
+	margin: 30px 15px;
+}
+.region_img img {
+	/* position: absolute; */
+	width: 100%;
+	height: 100%;
+	/* object-fit: contain; */
+	border-radius: 15px;
+}
+.region_period, .region_title{
+	text-align: center;
+}
+.region_title {
+	font-weight: bold;
+}
+.region_period {
+	font-weight: 100;
+}
+.region_heart {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	right: 30px;
+	top: 250px;
+	color: #D14C6C;
+	border: none;
+	background-color: transparent;
+	/* display: inline-block; */
+}
+/* 지역 추천 관광지 */
+.region_recommend_tour {
+	/* background-color: #94EB3E; */
+	position: relative;
+}
+/* 해당 지역 축제 전체 */
+.region_total_festival {
+	/* background-color: #FFB6C1; */
+}
+/* 해당 지역 관광지 전체 */
+.region_total_tour {
+	/* background-color: #FFC81E; */
+}
+/* 더보기 버튼 */
+.region_btn_more button {
+	background-color: #D14C6C;
+	border: none;
+	color: white;
+	padding: 10px 50px;
+	margin: 20px 0;
+	display: inline-block;
+	text-align: center;
+	border-radius: 20px;
+	font-size: large;
+}
