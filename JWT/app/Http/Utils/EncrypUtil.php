@@ -50,4 +50,16 @@ class EncrypUtil {
 		return Str::random($length);
 	}
 
+
+	/**
+	 * 솔트 제거
+	 * 
+	 * @param string $str 솔트가 포함된 문자열
+	 * @param int $saltLength 솔트 문자열 길이
+	 * @return string 솔트를 잘라낸 문자열
+	 */
+	public static function subStrSalt(string $str, int $saltLength) {
+		// 1바이트 문자열 자르기
+		return substr($str, 0, -1 * $saltLength);
+	}
 }
